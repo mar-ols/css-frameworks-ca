@@ -30,6 +30,8 @@ $grid-breakpoints: (
   xxl: 1500px,
 );
 
+$btn-close-color: #f3f6ec;
+
 // Configuration
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
