@@ -1,1 +1,43 @@
+$primary: #f3f6ec;
+$secondary: #516c56;
+$info: #e5b779;
 
+$headings-font-weight: 100;
+
+$h1-font-size: 2.2rem;
+$h2-font-size: 1.6rem;
+$h3-font-size: 1.5rem;
+
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.5,
+  2: $spacer * 0.75,
+  3: $spacer,
+  4: $spacer * 2,
+  5: $spacer * 3.5,
+  6: $spacer * 4,
+);
+
+// I've only changed the xxl and sm breakpoint here
+$grid-breakpoints: (
+  xs: 0,
+  sm: 535px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1500px,
+);
+
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "variables";
+@import "variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
