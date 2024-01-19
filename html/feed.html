@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>introverti - home</title>
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script
+      src="https://kit.fontawesome.com/d4c830eb8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-primary d-flex flex-column">
+    <header
+      class="bg-secondary d-flex justify-content-between align-items-center p-3"
+    >
+      <div>
+        <a href="../index.html"
+          ><img
+            src="../images/header_logo.png"
+            alt="introverti logo and the text: social media for quiet minds"
+            class="img-fluid"
+        /></a>
+      </div>
+      <div
+        data-bs-toggle="offcanvas"
+        href="#menu"
+        role="button"
+        aria-controls="menu"
+      >
+        <img src="../images/Menu.png" alt="Hamburger menu" class="img-fluid" />
+      </div>
+      <div
+        class="bg-secondary offcanvas offcanvas-end d-flex flex-column"
+        tabindex="-1"
+        id="menu"
+        data-bs-target="#menu"
+      >
+        <div class="offcanvas-header">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <a
+          href="../index.html"
+          class="list-group-item bg-secondary text-primary border-bottom m-3 pb-3"
+          >Home</a
+        >
+        <a
+          href="profile.html"
+          class="list-group-item bg-secondary text-primary text-primary border-bottom m-3 pb-3"
+          >Profile</a
+        >
+        <a
+          href="#"
+          class="list-group-item bg-secondary text-info border-bottom m-3 pb-3"
+          >Feed</a
+        >
+        <a
+          href="#"
+          class="list-group-item bg-secondary text-primary border-bottom m-3 pb-3"
+          >About introverti</a
+        >
+      </div>
+    </header>
+    <main class=""></main>
+    <footer class="bg-secondary py-3">
+      <ul class="list-group">
+        <li class="list-group-item bg-secondary border-0 text-primary">
+          About Introverti
+        </li>
+        <li class="list-group-item bg-secondary border-0 text-primary">
+          Contact Us
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

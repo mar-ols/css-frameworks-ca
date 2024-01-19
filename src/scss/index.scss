@@ -20,17 +20,15 @@ $spacers: (
   6: $spacer * 4,
 );
 
-// I've only changed the xxl and sm breakpoint here
-$grid-breakpoints: (
-  xs: 0,
-  sm: 535px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1500px,
-);
-
 $btn-close-color: #f3f6ec;
+
+main {
+  background-image: url("../../images/Wave.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+}
 
 // Configuration
 @import "../../node_modules/bootstrap/scss/functions";

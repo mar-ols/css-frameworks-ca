@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>introverti - home</title>
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script
+      src="https://kit.fontawesome.com/d4c830eb8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-primary d-flex flex-column">
+    <header
+      class="bg-secondary d-flex justify-content-between align-items-center p-3"
+    >
+      <div>
+        <a href="../index.html"
+          ><img
+            src="../images/header_logo.png"
+            alt="introverti logo and the text: social media for quiet minds"
+            class="img-fluid"
+        /></a>
+      </div>
+      <div
+        data-bs-toggle="offcanvas"
+        href="#menu"
+        role="button"
+        aria-controls="menu"
+      >
+        <img src="../images/Menu.png" alt="Hamburger menu" class="img-fluid" />
+      </div>
+      <div
+        class="bg-secondary offcanvas offcanvas-end d-flex flex-column"
+        tabindex="-1"
+        id="menu"
+        data-bs-target="#menu"
+      >
+        <div class="offcanvas-header">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <a
+          href="../index.html"
+          class="list-group-item bg-secondary text-primary border-bottom m-3 pb-3"
+          >Home</a
+        >
+        <a
+          href="#"
+          class="list-group-item bg-secondary text-info text-primary border-bottom m-3 pb-3"
+          >Profile</a
+        >
+        <a
+          href="feed.html"
+          class="list-group-item bg-secondary text-primary border-bottom m-3 pb-3"
+          >Feed</a
+        >
+        <a
+          href="#"
+          class="list-group-item bg-secondary text-primary border-bottom m-3 pb-3"
+          >About introverti</a
+        >
+      </div>
+    </header>
+    <main class="d-md-flex">
+      <div class="col-sm-7 col-md-3 mx-sm-auto">
+        <div class="d-flex align-items-center ms-1">
+          <h1>[username]</h1>
+          <img
+            src="../images/social_batt_half.png"
+            alt="A battery representing social battery status"
+            class="img-fluid ps-1"
+          />
+        </div>
+        <div class="ms-1">
+          <img
+            src="../images/profile.jpg"
+            alt="Selfie of me with the social battery status in the top right corner"
+            class="img-fluid rounded-circle"
+          />
+        </div>
+        <div class="ms-1 mb-4">
+          <p>User bio</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+            et quisquam distinctio non possimus voluptas ab veniam aut est
+            aliquam!
+          </p>
+        </div>
+        <div class="ms-1 mb-4">
+          <button class="btn btn-info me-1 mb-1">Follow</button>
+          <button class="btn btn-info me-1 mb-1">Message</button>
+          <button class="btn btn-info me-1 mb-1">Events</button>
+        </div>
+        <div class="ms-1">
+          <div>
+            <p><a href="#" class="text-black">Followers</a></p>
+            <img
+              src="../images/followers.png"
+              alt="Placeholder for followers"
+              class="me-1 mb-1 rounded"
+            /><img
+              src="../images/followers.png"
+              alt="Placeholder for followers"
+              class="me-1 mb-1 rounded"
+            /><img
+              src="../images/followers.png"
+              alt="Placeholder for followers"
+              class="me-1 mb-1 rounded"
+            /><img
+              src="../images/followers.png"
+              alt="Placeholder for followers"
+              class="me-1 mb-1 rounded"
+            />
+          </div>
+          <div>
+            <p><a href="#" class="text-black">Following</a></p>
+            <img
+              src="../images/followers.png"
+              alt="Placeholder for followers"
+              class="me-1 mb-1 rounded"
+            /><img
+              src="../images/followers.png"
+              alt="Placeholder for followers"
+              class="me-1 mb-1 rounded"
+            /><img
+              src="../images/followers.png"
+              alt="Placeholder for followers"
+              class="me-1 mb-1 rounded"
+            /><img
+              src="../images/followers.png"
+              alt="Placeholder for followers"
+              class="me-1 mb-1 rounded"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 p-3">
+        <div class="d-flex flex-wrap p-4">
+          <div class="col-sm-5 col-md-6 border border-secondary rounded">
+            <img
+              src="../images/posts/mock_post_1.jpg"
+              alt="Trees and a sunset covered in mist"
+              class="img-fluid"
+            />
+            <i class="fa-regular fa-heart fa-lg" style="color: #516c56"></i> 17
+            <i class="fa-regular fa-comment fa-lg" style="color: #516c56"></i> 4
+            <p class="pb-3">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
+              numquam? Magnam alias dolore sapiente debitis?
+            </p>
+          </div>
+          <div class="col-sm-5 col-md-6 border border-secondary rounded">
+            <img
+              src="../images/posts/mock_post_2.jpg"
+              alt="A green cabin in the woods, the sun is shining through some trees"
+              class="img-fluid"
+            />
+            <i class="fa-regular fa-heart fa-lg" style="color: #516c56"></i> 5
+            <i class="fa-regular fa-comment fa-lg" style="color: #516c56"></i> 2
+            <p class="pb-3">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
+              numquam? Magnam alias dolore sapiente debitis?
+            </p>
+          </div>
+          <div class="col-sm-5 col-md-6 border border-secondary rounded">
+            <img
+              src="../images/posts/mock_post_3.jpg"
+              alt="A woman standing on the white moon landscape in Sarakiniko on Milos, Greece"
+              class="img-fluid"
+            />
+            <i class="fa-regular fa-heart fa-lg" style="color: #516c56"></i> 23
+            <i class="fa-regular fa-comment fa-lg" style="color: #516c56"></i> 7
+            <p class="pb-3">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
+              numquam? Magnam alias dolore sapiente debitis?
+            </p>
+          </div>
+          <div class="col-sm-5 col-md-6 border border-secondary rounded">
+            <img
+              src="../images/posts/mock_post_4.jpg"
+              alt="A woman standing in the archway of some ruins in Greece"
+              class="img-fluid"
+            />
+            <i class="fa-regular fa-heart fa-lg" style="color: #516c56"></i> 18
+            <i class="fa-regular fa-comment fa-lg" style="color: #516c56"></i> 4
+            <p class="pb-3">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
+              numquam? Magnam alias dolore sapiente debitis?
+            </p>
+          </div>
+          <div class="col-sm-5 col-md-6 border border-secondary rounded">
+            <img
+              src="../images/posts/mock_post_5.jpg"
+              alt="A beach and some cliffs in Greece"
+              class="img-fluid"
+            />
+            <i class="fa-regular fa-heart fa-lg" style="color: #516c56"></i> 15
+            <i class="fa-regular fa-comment fa-lg" style="color: #516c56"></i> 2
+            <p class="pb-3">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
+              numquam? Magnam alias dolore sapiente debitis?
+            </p>
+          </div>
+          <div class="col-sm-5 col-md-6 border border-secondary rounded">
+            <img
+              src="../images/posts/mock_post_6.jpg"
+              alt="Three squid hanging on a line to dry with the sea in the background"
+              class="img-fluid"
+            />
+            <i class="fa-regular fa-heart fa-lg" style="color: #516c56"></i> 31
+            <i class="fa-regular fa-comment fa-lg" style="color: #516c56"></i> 9
+            <p class="pb-3">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
+              numquam? Magnam alias dolore sapiente debitis?
+            </p>
+          </div>
+          <div class="col-sm-5 col-md-6 border border-secondary rounded">
+            <img
+              src="../images/posts/mock_post_7.jpg"
+              alt="A small white church in Cyprus"
+              class="img-fluid"
+            />
+            <i class="fa-regular fa-heart fa-lg" style="color: #516c56"></i> 9
+            <i class="fa-regular fa-comment fa-lg" style="color: #516c56"></i> 1
+            <p class="pb-3">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
+              numquam? Magnam alias dolore sapiente debitis?
+            </p>
+          </div>
+          <div class="col-sm-5 col-md-6 border border-secondary rounded">
+            <img
+              src="../images/posts/mock_post_8.jpg"
+              alt="A brown and green landscape by some mountains on an island in Greece"
+              class="img-fluid"
+            />
+            <i class="fa-regular fa-heart fa-lg" style="color: #516c56"></i> 17
+            <i class="fa-regular fa-comment fa-lg" style="color: #516c56"></i> 2
+            <p class="pb-3">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
+              numquam? Magnam alias dolore sapiente debitis?
+            </p>
+          </div>
+          <div class="col-sm-5 col-md-6 border border-secondary rounded">
+            <img
+              src="../images/posts/mock_post_9.jpg"
+              alt="A lit-up highway with palms and trees on each side, and buildings in the distance in Malaga, Spain"
+              class="img-fluid"
+            />
+            <i class="fa-regular fa-heart fa-lg" style="color: #516c56"></i> 24
+            <i class="fa-regular fa-comment fa-lg" style="color: #516c56"></i> 6
+            <p class="pb-3">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
+              numquam? Magnam alias dolore sapiente debitis?
+            </p>
+          </div>
+          <div class="col-sm-5 col-md-6 border border-secondary rounded">
+            <img
+              src="../images/posts/mock_post_10.jpg"
+              alt="A black cat lying in the sun sleeping"
+              class="img-fluid"
+            />
+            <i class="fa-regular fa-heart fa-lg" style="color: #516c56"></i> 47
+            <i class="fa-regular fa-comment fa-lg" style="color: #516c56"></i>
+            13
+            <p class="pb-3">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
+              numquam? Magnam alias dolore sapiente debitis?
+            </p>
+          </div>
+          <div class="col-sm-5 col-md-6 border border-secondary rounded">
+            <img
+              src="../images/posts/mock_post_11.jpg"
+              alt="A waterfall coming down a cliff surrounded by palms in Tenerife"
+              class="img-fluid"
+            />
+            <i class="fa-regular fa-heart fa-lg" style="color: #516c56"></i> 24
+            <i class="fa-regular fa-comment fa-lg" style="color: #516c56"></i> 6
+            <p class="pb-3">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
+              numquam? Magnam alias dolore sapiente debitis?
+            </p>
+          </div>
+          <div class="col-sm-5 col-md-6 border border-secondary rounded">
+            <img
+              src="../images/posts/mock_post_12.jpg"
+              alt="A sunset going into the sea with dramatic clouds above"
+              class="img-fluid"
+            />
+            <i class="fa-regular fa-heart fa-lg" style="color: #516c56"></i> 28
+            <i class="fa-regular fa-comment fa-lg" style="color: #516c56"></i> 9
+            <p class="pb-3">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
+              numquam? Magnam alias dolore sapiente debitis?
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-secondary py-3">
+      <ul class="list-group">
+        <li class="list-group-item bg-secondary border-0 text-primary">
+          About Introverti
+        </li>
+        <li class="list-group-item bg-secondary border-0 text-primary">
+          Contact Us
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
