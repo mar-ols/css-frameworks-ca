@@ -51,13 +51,13 @@
           >Home</a
         >
         <a
-          href="#"
-          class="list-group-item bg-secondary text-info text-primary border-bottom m-3 pb-3"
+          href="../profile/index.html"
+          class="list-group-item bg-secondary text-primary text-primary border-bottom m-3 pb-3"
           >Profile</a
         >
         <a
-          href="feed.html"
-          class="list-group-item bg-secondary text-primary border-bottom m-3 pb-3"
+          href="#"
+          class="list-group-item bg-secondary text-info border-bottom m-3 pb-3"
           >Feed</a
         >
         <a
@@ -67,84 +67,39 @@
         >
       </div>
     </header>
-    <main class="d-md-flex">
-      <div class="col-sm-7 col-md-3 mx-sm-auto">
-        <div class="d-flex align-items-center ms-1">
-          <h1>[username]</h1>
-          <img
-            src="../images/social_batt_half.png"
-            alt="A battery representing social battery status"
-            class="img-fluid ps-1"
-          />
+    <main>
+      <h1 class="text-center my-4">Feed</h1>
+      <div
+        class="d-flex flex-column flex-sm-row justify-content-sm-around align-items-sm-center ms-3"
+      >
+        <div
+          class="d-flex flex-column flex-sm-row align-items-start mb-3 mb-sm-0"
+        >
+          <label for="sort" class="me-1">Sort by:</label>
+          <select id="sort" name="brand">
+            <option value="dateNew">Date - newest</option>
+            <option value="dateOld">Date - oldest</option>
+            <option value="likesMost">Likes - most</option>
+            <option value="likesFew">Likes - fewest</option>
+          </select>
         </div>
-        <div class="ms-1">
-          <img
-            src="../images/profile.jpg"
-            alt="Selfie of me with the social battery status in the top right corner"
-            class="img-fluid rounded-circle"
-          />
-        </div>
-        <div class="ms-1 mb-4">
-          <p>User bio</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            et quisquam distinctio non possimus voluptas ab veniam aut est
-            aliquam!
-          </p>
-        </div>
-        <div class="ms-1 mb-4">
-          <button class="btn btn-info border-secondary me-1 mb-1">
-            Follow
-          </button>
-          <button class="btn btn-info border-secondary me-1 mb-1">
-            Message
-          </button>
-          <button class="btn btn-info border-secondary me-1 mb-1">
-            Events
-          </button>
-        </div>
-        <div class="ms-1">
-          <div>
-            <p><a href="#" class="text-black">Followers</a></p>
-            <img
-              src="../images/followers.png"
-              alt="Placeholder for followers"
-              class="me-1 mb-1 rounded"
-            /><img
-              src="../images/followers.png"
-              alt="Placeholder for followers"
-              class="me-1 mb-1 rounded"
-            /><img
-              src="../images/followers.png"
-              alt="Placeholder for followers"
-              class="me-1 mb-1 rounded"
-            /><img
-              src="../images/followers.png"
-              alt="Placeholder for followers"
-              class="me-1 mb-1 rounded"
-            />
-          </div>
-          <div>
-            <p><a href="#" class="text-black">Following</a></p>
-            <img
-              src="../images/followers.png"
-              alt="Placeholder for followers"
-              class="me-1 mb-1 rounded"
-            /><img
-              src="../images/followers.png"
-              alt="Placeholder for followers"
-              class="me-1 mb-1 rounded"
-            /><img
-              src="../images/followers.png"
-              alt="Placeholder for followers"
-              class="me-1 mb-1 rounded"
-            /><img
-              src="../images/followers.png"
-              alt="Placeholder for followers"
-              class="me-1 mb-1 rounded"
-            />
-          </div>
-        </div>
+        <label for="search" class=""></label>
+        <input
+          type="text"
+          id="search"
+          class="border border-secondary rounded col-10 col-sm-6 col-md-4 col-lg-3 me-2 p-1"
+          placeholder="Search.."
+        />
+      </div>
+      <div
+        class="d-flex flex-column col-sm-8 col-md-7 col-lg-5 col-xxl-4 mx-3 mx-sm-auto mt-5"
+      >
+        <label for="post" class=""><h2>Create new post</h2></label>
+        <textarea id="post" name="post" class="pb-6"></textarea>
+        <i class="fa-regular fa-image fa-2xl my-3" style="color: #516c56"></i>
+        <button class="btn btn-info border-secondary col-5 col-xl-3 mb-1">
+          Post
+        </button>
       </div>
       <div
         class="d-md-flex flex-wrap col-10 col-sm-8 col-md-7 col-lg-5 mx-auto my-3"
