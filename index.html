@@ -63,74 +63,78 @@
         >
       </div>
     </header>
-    <main class="d-lg-flex mt-4">
-      <div
-        class="bg-secondary col-sm-8 col-md-6 col-lg-5 col-xl-4 col-xxl-3 rounded mx-auto text-center mb-4"
-      >
-        <div class="py-4">
-          <img
-            src="images/profile_pic.png"
-            alt="Round circle, space for profile pic"
-            class="img-fluid mt-4"
-          />
+    <main class="">
+      <div class="container mt-4">
+        <div class="row">
+          <div
+            class="bg-secondary col-sm-9 col-m-8 col-lg-5 rounded mx-auto text-center mb-4"
+          >
+            <div class="py-4">
+              <img
+                src="images/profile_pic.png"
+                alt="Round circle, space for profile pic"
+                class="img-fluid mt-4"
+              />
+            </div>
+            <form class="d-flex flex-column p-sm-4" action="html/profile.html">
+              <label for="username"></label>
+              <input
+                type="text"
+                id="username"
+                class="rounded border mx-5 mb-2"
+                placeholder="Username"
+                required
+              />
+              <label for="password"></label>
+              <input
+                type="text"
+                id="password"
+                class="rounded border mx-5"
+                placeholder="Password"
+                minlength="8"
+                required
+              />
+              <p class="text-end me-5 text-info">Forgot your password?</p>
+              <button type="submit" class="btn btn-info w-50 mx-auto my-4">
+                Log in
+              </button>
+            </form>
+            <p>Not a user yet?</p>
+            <p><a href="#" class="text-info">Click here</a> to sign up,</p>
+            <p class="pb-4">
+              or <a href="#" class="text-info">sign in with Google</a>
+            </p>
+          </div>
+          <div
+            class="bg-secondary col-sm-9 col-m-8 col-lg-6 rounded mx-auto p-5 mb-4"
+          >
+            <img
+              src="/images/toa-heftiba-_UIVmIBB3JU-unsplash.jpg"
+              alt="Two hands reaching for each other"
+              class="img-fluid border rounded"
+            />
+            <h1 class="mt-2">Who are we?</h1>
+            <p>
+              We at introverti wanted to make a calmer social media space for
+              the introverts, neurodivergents and quiet thinkers of the world
+            </p>
+            <h2 class="pb-1">On our site you can:</h2>
+            <p>- Share images, videos or text posts</p>
+            <p>
+              - Join rl-meet ups/activities with like-minded people, with no
+              expectations of small-talk
+            </p>
+            <p>- Host or join a Zoom call for body doubling</p>
+            <h2 class="pb-1">You'll find:</h2>
+            <p>- No ads</p>
+            <p>- No annoying auto scroll</p>
+            <p>- No auto play on videos</p>
+            <p>
+              - Social battery status on your profile with option to turn off
+              messages/chat if you're running on low
+            </p>
+          </div>
         </div>
-        <form class="d-flex flex-column p-sm-4" action="html/profile.html">
-          <label for="username"></label>
-          <input
-            type="text"
-            id="username"
-            class="rounded border mx-5 mb-2"
-            placeholder="Username"
-            required
-          />
-          <label for="password"></label>
-          <input
-            type="text"
-            id="password"
-            class="rounded border mx-5"
-            placeholder="Password"
-            minlength="8"
-            required
-          />
-          <p class="text-end me-5 text-info">Forgot your password?</p>
-          <button type="submit" class="btn btn-info w-50 mx-auto my-4">
-            Log in
-          </button>
-        </form>
-        <p>Not a user yet?</p>
-        <p><a href="#" class="text-info">Click here</a> to sign up,</p>
-        <p class="pb-4">
-          or <a href="#" class="text-info">sign in with Google</a>
-        </p>
-      </div>
-      <div
-        class="bg-secondary col-sm-8 col-md-6 col-lg-6 col-xl-5 col-xxl-4 rounded mx-auto p-5 mb-4"
-      >
-        <img
-          src="/images/toa-heftiba-_UIVmIBB3JU-unsplash.jpg"
-          alt="Two hands reaching for each other"
-          class="img-fluid border rounded"
-        />
-        <h1 class="mt-2">Who are we?</h1>
-        <p>
-          We at introverti wanted to make a calmer social media space for the
-          introverts, neurodivergents and quiet thinkers of the world
-        </p>
-        <h2 class="pb-1">On our site you can:</h2>
-        <p>- Share images, videos or text posts</p>
-        <p>
-          - Join rl-meet ups/activities with like-minded people, with no
-          expectations of small-talk
-        </p>
-        <p>- Host or join a Zoom call for body doubling</p>
-        <h2 class="pb-1">You'll find:</h2>
-        <p>- No ads</p>
-        <p>- No annoying auto scroll</p>
-        <p>- No auto play on videos</p>
-        <p>
-          - Social battery status on your profile with option to turn off
-          messages/chat if you're running on low
-        </p>
       </div>
     </main>
     <footer class="bg-secondary py-3">
