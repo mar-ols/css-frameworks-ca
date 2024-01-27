@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A social media site for introverts and neurodivergents. Post pictures, videos and text posts."
+    />
+    <title>introverti - home</title>
+    <link rel="stylesheet" href="dist/css/index.css" />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  </head>
+  <body class="bg-primary text-primary d-flex flex-column">
+    <header
+      class="bg-secondary d-flex justify-content-between align-items-center p-3"
+    >
+      <div>
+        <a href="#"
+          ><img
+            src="images/header_logo.png"
+            alt="introverti logo and the text: social media for quiet minds"
+            class="img-fluid"
+        /></a>
+      </div>
+      <nav>
+        <div
+          data-bs-toggle="offcanvas"
+          href="#menu"
+          role="button"
+          aria-controls="menu"
+        >
+          <img src="images/Menu.png" alt="Hamburger menu" class="img-fluid" />
+        </div>
+        <div
+          class="bg-secondary offcanvas offcanvas-end d-flex flex-column"
+          tabindex="-1"
+          id="menu"
+          data-bs-target="#menu"
+        >
+          <div class="offcanvas-header">
+            <button
+              type="button"
+              class="btn-close ms-auto"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <a
+            href="#"
+            class="list-group-item bg-secondary text-info border-bottom m-3 pb-3"
+            >Home</a
+          >
+          <a
+            href="profile/index.html"
+            class="list-group-item bg-secondary text-primary border-bottom m-3 pb-3"
+            >Profile</a
+          >
+          <a
+            href="feed/index.html"
+            class="list-group-item bg-secondary text-primary border-bottom m-3 pb-3"
+            >Feed</a
+          >
+          <a
+            href="#"
+            class="list-group-item bg-secondary text-primary border-bottom m-3 pb-3"
+            >About introverti</a
+          >
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container mt-4">
+        <div class="row">
+          <div
+            class="bg-secondary col-sm-9 col-m-8 col-lg-5 rounded mx-auto text-center mb-4"
+          >
+            <div class="py-4">
+              <img
+                src="images/profile_pic.png"
+                alt="Round circle, space for profile pic"
+                class="img-fluid mt-4"
+              />
+            </div>
+            <form class="d-flex flex-column p-sm-4" action="html/profile.html">
+              <label for="username"></label>
+              <input
+                type="text"
+                id="username"
+                class="rounded border mx-5 mb-2"
+                placeholder="Username"
+                required
+              />
+              <label for="password"></label>
+              <input
+                type="text"
+                id="password"
+                class="rounded border mx-5"
+                placeholder="Password"
+                minlength="8"
+                required
+              />
+              <p class="text-end me-5 text-info">Forgot your password?</p>
+              <button type="submit" class="btn btn-info w-50 mx-auto my-4">
+                Log in
+              </button>
+            </form>
+            <p>Not a user yet?</p>
+            <p><a href="#" class="text-info">Click here</a> to sign up,</p>
+            <p class="pb-4">
+              or <a href="#" class="text-info">sign in with Google</a>
+            </p>
+          </div>
+          <div
+            class="bg-secondary col-sm-9 col-m-8 col-lg-6 rounded mx-auto p-5 mb-4"
+          >
+            <img
+              src="/images/toa-heftiba-_UIVmIBB3JU-unsplash.jpg"
+              alt="Two hands reaching for each other"
+              class="img-fluid border rounded"
+            />
+            <h1 class="mt-2">Who are we?</h1>
+            <p>
+              We at introverti wanted to make a calmer social media space for
+              the introverts, neurodivergents and quiet thinkers of the world
+            </p>
+            <h2 class="pb-1">On our site you can:</h2>
+            <p>- Share images, videos or text posts</p>
+            <p>
+              - Join rl-meet ups/activities with like-minded people, with no
+              expectations of small-talk
+            </p>
+            <p>- Host or join a Zoom call for body doubling</p>
+            <h2 class="pb-1">You'll find:</h2>
+            <p>- No ads</p>
+            <p>- No annoying auto scroll</p>
+            <p>- No auto play on videos</p>
+            <p>
+              - Social battery status on your profile with option to turn off
+              messages/chat if you're running on low
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-secondary py-3">
+      <ul class="list-group">
+        <li class="list-group-item bg-secondary border-0 text-primary">
+          About Introverti
+        </li>
+        <li class="list-group-item bg-secondary border-0 text-primary">
+          Contact Us
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
