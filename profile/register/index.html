@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Your personal profile page for introverti."
+    />
+    <title>introverti - home</title>
+    <link rel="stylesheet" href="../../dist/css/index.css" />
+    <script src="../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script
+      src="https://kit.fontawesome.com/d4c830eb8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-primary d-flex flex-column">
+    <header
+      class="bg-secondary d-flex justify-content-between align-items-center p-3"
+    >
+      <div>
+        <a href="../../.."
+          ><img
+            src="../../../images/header_logo.png"
+            alt="introverti logo and the text: social media for quiet minds"
+            class="img-fluid"
+        /></a>
+      </div>
+    </header>
+    <main class="vh-100">
+      <div class="container mt-4">
+        <div class="row">
+          <h1 class="text-center mb-4">Register</h1>
+          <div
+            class="bg-secondary text-primary col-sm-9 col-m-8 col-lg-5 rounded mx-auto mb-4"
+          >
+            <form
+              id="registerForm"
+              action="/auth/register"
+              method="post"
+              class="p-4"
+            >
+              <label for="name">*Name:</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="form-control rounded mb-2"
+                required
+                pattern="^[\w]+$"
+                title="Username can only contain letters (A-Z), numbers (0-9) and underscore (_)"
+              />
+              <label for="email">*Email address:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="form-control rounded mb-2"
+                placeholder="xxxx@stud.noroff.no"
+                required
+                pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                title="Email must end in @noroff.no or @stud.noroff.no"
+              />
+              <label for="password">*Choose a password:</label>
+              <input
+                type="text"
+                name="password"
+                id="password"
+                class="form-control rounded mb-2"
+                placeholder="*************"
+                minlength="8"
+                required
+              />
+              <label for="banner"
+                >Banner: <span class="text-dark">optional</span></label
+              >
+              <input
+                type="url"
+                name="banner"
+                id="banner"
+                class="form-control rounded mb-2"
+              />
+              <label for="avatar"
+                >Avatar: <span class="text-dark">optional</span></label
+              >
+              <input
+                type="url"
+                name="avatar"
+                id="avatar"
+                class="form-control rounded mb-2"
+              />
+              <div class="text-center">
+                <button type="submit" class="btn btn-info w-50 my-3">
+                  Register
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-secondary py-3">
+      <ul class="list-group">
+        <li class="list-group-item bg-secondary border-0 text-primary">
+          About Introverti
+        </li>
+        <li class="list-group-item bg-secondary border-0 text-primary">
+          Contact Us
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

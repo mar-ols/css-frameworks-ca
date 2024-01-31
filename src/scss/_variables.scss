@@ -302,7 +302,6 @@ $success: $green;
 $warning: $yellow;
 $danger: $red;
 $light: $gray-100;
-$dark: $gray-900;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -655,8 +654,6 @@ $small-font-size: 0.875em;
 
 $sub-sup-font-size: 0.75em;
 
-// fusv-disable
-$text-muted: var(--#{$prefix}secondary-color); // Deprecated in 5.3.0
 // fusv-enable
 
 $initialism-font-size: $small-font-size;
@@ -757,7 +754,6 @@ $table-variants: (
   "warning": shift-color($warning, $table-bg-scale),
   "danger": shift-color($danger, $table-bg-scale),
   "light": $light,
-  "dark": $dark,
 );
 // scss-docs-end table-loop
 

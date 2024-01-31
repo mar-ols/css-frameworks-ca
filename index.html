@@ -10,6 +10,7 @@
     <title>introverti - home</title>
     <link rel="stylesheet" href="dist/css/index.css" />
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="src/js/script.js"></script>
   </head>
   <body class="bg-primary text-primary d-flex flex-column">
     <header
@@ -23,51 +24,6 @@
             class="img-fluid"
         /></a>
       </div>
-      <nav>
-        <div
-          data-bs-toggle="offcanvas"
-          href="#menu"
-          role="button"
-          aria-controls="menu"
-        >
-          <img src="images/Menu.png" alt="Hamburger menu" class="img-fluid" />
-        </div>
-        <div
-          class="bg-secondary offcanvas offcanvas-end d-flex flex-column"
-          tabindex="-1"
-          id="menu"
-          data-bs-target="#menu"
-        >
-          <div class="offcanvas-header">
-            <button
-              type="button"
-              class="btn-close ms-auto"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-          <a
-            href="#"
-            class="list-group-item bg-secondary text-info border-bottom m-3 pb-3"
-            >Home</a
-          >
-          <a
-            href="profile/index.html"
-            class="list-group-item bg-secondary text-primary border-bottom m-3 pb-3"
-            >Profile</a
-          >
-          <a
-            href="feed/index.html"
-            class="list-group-item bg-secondary text-primary border-bottom m-3 pb-3"
-            >Feed</a
-          >
-          <a
-            href="#"
-            class="list-group-item bg-secondary text-primary border-bottom m-3 pb-3"
-            >About introverti</a
-          >
-        </div>
-      </nav>
     </header>
     <main>
       <div class="container mt-4">
@@ -82,21 +38,27 @@
                 class="img-fluid mt-4"
               />
             </div>
-            <form class="d-flex flex-column p-sm-4" action="profile/index.html">
-              <label for="username"></label>
+            <form
+              id="loginForm"
+              class="d-flex flex-column p-sm-4"
+              action="profile"
+            >
+              <label for="enterEmail"></label>
               <input
-                type="text"
-                id="username"
+                type="email"
+                name="enterEmail"
+                id="enterEmail"
                 class="rounded border mx-5 mb-2"
-                placeholder="Username"
+                placeholder="Email address"
                 required
               />
-              <label for="password"></label>
+              <label for="enterPassword"></label>
               <input
-                type="text"
-                id="password"
+                type="password"
+                name="enterPassword"
+                id="enterPassword"
                 class="rounded border mx-5"
-                placeholder="Password"
+                placeholder="***********"
                 minlength="8"
                 required
               />
@@ -106,9 +68,9 @@
               </button>
             </form>
             <p>Not a user yet?</p>
-            <p><a href="#" class="text-info">Click here</a> to sign up,</p>
-            <p class="pb-4">
-              or <a href="#" class="text-info">sign in with Google</a>
+            <p class="mb-4">
+              <a href="profile/register" class="text-info">Click here</a>
+              to sign up.
             </p>
           </div>
           <div
