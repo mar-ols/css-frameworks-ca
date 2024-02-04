@@ -38,11 +38,7 @@
                 class="img-fluid mt-4"
               />
             </div>
-            <form
-              id="loginForm"
-              class="d-flex flex-column p-sm-4"
-              action="profile"
-            >
+            <form id="loginForm" class="d-flex flex-column p-sm-4">
               <label for="enterEmail"></label>
               <input
                 type="email"
@@ -63,7 +59,11 @@
                 required
               />
               <p class="text-end me-5 text-info">Forgot your password?</p>
-              <button type="submit" class="btn btn-info w-50 mx-auto my-4">
+              <button
+                type="submit"
+                id="loginBtn"
+                class="btn btn-info w-50 mx-auto my-4"
+              >
                 Log in
               </button>
             </form>
@@ -104,6 +104,26 @@
           </div>
         </div>
       </div>
+      <dialog
+        id="unSuccessfulLoginDialog"
+        class="pt-3 pb-2 px-4 border-secondary text-center"
+      >
+        <div class="d-flex">
+          <div class="col-11 pt-1">
+            <p>Wrong email or password.</p>
+          </div>
+          <div class="col-1">
+            <button
+              type="button"
+              id="unSuccessLoginCloseBtn"
+              class="btn"
+              aria-label="Close"
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+      </dialog>
     </main>
     <footer class="bg-secondary py-3">
       <ul class="list-group">

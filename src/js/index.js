@@ -18,5 +18,7 @@ function addNumbers(a, b) {
 }
 
 import { getRegisterData } from "./functions/profile/registerForm.js";
+import { getLoginData } from "./functions/profile/loginForm.js";
 
 getRegisterData();
+getLoginData();

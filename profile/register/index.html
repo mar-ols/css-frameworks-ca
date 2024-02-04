@@ -7,7 +7,7 @@
       name="description"
       content="Your personal profile page for introverti."
     />
-    <title>introverti - home</title>
+    <title>introverti - register</title>
     <link rel="stylesheet" href="../../dist/css/index.css" />
     <script src="../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script
@@ -105,6 +105,29 @@
                   <button
                     type="button"
                     id="closeBtn"
+                    class="btn"
+                    aria-label="Close"
+                  >
+                    &times;
+                  </button>
+                </div>
+              </div>
+            </dialog>
+            <dialog
+              id="unSuccessfulDialog"
+              class="pt-3 pb-2 px-4 border-secondary text-center"
+            >
+              <div class="d-flex">
+                <div class="col-10 pt-1">
+                  <p>
+                    Looks like this user already exists, please choose a unique
+                    username and email.
+                  </p>
+                </div>
+                <div class="col-1">
+                  <button
+                    type="button"
+                    id="unSuccessCloseBtn"
                     class="btn"
                     aria-label="Close"
                   >
