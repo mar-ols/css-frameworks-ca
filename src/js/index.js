@@ -16,3 +16,7 @@
 function addNumbers(a, b) {
   return a + b;
 }
+
+import { getRegisterData } from "./functions/profile/registerForm.js";
+
+getRegisterData();

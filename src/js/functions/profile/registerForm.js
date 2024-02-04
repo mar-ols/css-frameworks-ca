@@ -1,6 +1,6 @@
 import { register } from "./register.js";
 
-function getRegisterData() {
+export function getRegisterData() {
   const getRegisterForm = document.querySelector("#registerForm");
 
   getRegisterForm.addEventListener("submit", (event) => {
@@ -24,5 +24,3 @@ function getRegisterData() {
     register(user);
   });
 }
-
-getRegisterData();

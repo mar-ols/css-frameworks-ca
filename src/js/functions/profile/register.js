@@ -14,11 +14,11 @@ export async function register(user) {
       body: JSON.stringify(user),
     };
     const response = await fetch(registerURL, postData);
-    console.log(response);
     const json = await response.json();
-    console.log(json);
     if (response.ok) {
       registerSuccess();
+      console.log(json);
+    } else {
     }
   } catch (error) {
     console.error(error);
