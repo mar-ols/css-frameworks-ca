@@ -16,3 +16,9 @@
 function addNumbers(a, b) {
   return a + b;
 }
+
+import { getRegisterData } from "./functions/profile/registerForm.js";
+import { getLoginData } from "./functions/profile/loginForm.js";
+
+getRegisterData();
+getLoginData();
