@@ -4,12 +4,12 @@ export function registerSuccess() {
 
   successDialog.showModal();
   closeBtn.addEventListener("click", () => {
-    window.location.href = "../index.html";
+    window.location.href = "../../";
   });
 
   window.onclick = function (event) {
     if (event.target == successDialog) {
-      window.location.href = "../index.html";
+      window.location.href = "../../";
     }
   };
 }
