@@ -1,4 +1,4 @@
-import { login } from "./login.js";
+import { login } from "../../api/calls/login.js";
 
 export function getLoginData() {
   const getLoginForm = document.querySelector("#loginForm");

@@ -1,6 +1,6 @@
-import { API_BASE, API_REGISTER } from "../../api/constants.js";
-import { registerSuccess } from "../userMessages/registerSuccess.js";
-import { registerUnsuccessful } from "../userMessages/registerUnsuccessful.js";
+import { API_BASE, API_REGISTER } from "../constants.js";
+import { registerSuccess } from "../../functions/userMessages/registerSuccess.js";
+import { registerUnsuccessful } from "../../functions/userMessages/registerUnsuccessful.js";
 
 const action = API_REGISTER;
 

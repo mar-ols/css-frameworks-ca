@@ -1,6 +1,6 @@
-import { API_BASE, API_LOGIN } from "../../api/constants.js";
-import { loginUnsuccessful } from "../userMessages/loginUnsuccessful.js";
-import * as storage from "../storage/localStorage.js";
+import { API_BASE, API_LOGIN } from "../constants.js";
+import { loginUnsuccessful } from "../../functions/userMessages/loginUnsuccessful.js";
+import * as storage from "../../functions/storage/localStorage.js";
 
 const action = API_LOGIN;
 

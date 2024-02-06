@@ -1,4 +1,4 @@
-import { register } from "./register.js";
+import { register } from "../../api/calls/register.js";
 
 export function getRegisterData() {
   const getRegisterForm = document.querySelector("#registerForm");
