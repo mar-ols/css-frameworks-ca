@@ -2,10 +2,8 @@ import { API_BASE, API_LOGIN } from "../constants.js";
 import { loginUnsuccessful } from "../../functions/userMessages/loginUnsuccessful.js";
 import * as storage from "../../functions/storage/localStorage.js";
 
-const action = API_LOGIN;
-
 export async function login(user) {
-  const loginURL = API_BASE + action;
+  const loginURL = API_BASE + API_LOGIN;
   try {
     const postData = {
       method: "POST",
@@ -18,8 +16,8 @@ export async function login(user) {
     const json = await response.json();
     console.log(json);
     if (response.ok) {
-      storage.save("token", json.accessToken);
-      storage.save("profile", {
+      storage.saveStorage("token", json.accessToken);
+      storage.saveStorage("profile", {
         userName: json.name,
         userEmail: json.email,
         userAvatar: json.avatar,
