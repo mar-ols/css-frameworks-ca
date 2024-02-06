@@ -31,20 +31,23 @@ async function displayPosts() {
         postImageContainer.appendChild(postImage);
       }
 
-      // Post title
+      // Post title link
+      const titleLink = document.createElement("a");
+      titleLink.href = "singlePost/index.html?id=" + `${post.id}`;
+      titleLink.classList.add("text-secondary");
+      // Post title text
       const postTitleContainer = document.createElement("h3");
+      postTitleContainer.innerText = postTitleContainer;
       postTitleContainer.classList.add("px-2");
       postTitleContainer.classList.add("pt-2");
       postTitleContainer.innerText = `${post.title}`;
 
       // Post date
-
       let neaterDate = new Date(post.created).toLocaleDateString("en-US", {
         year: "numeric",
         month: "long",
         day: "2-digit",
       });
-
       const postDate = document.createElement("p");
       postDate.classList.add("px-2");
       postDate.classList.add("small");
@@ -56,7 +59,8 @@ async function displayPosts() {
       postBodyContainer.innerText = `${post.body}`;
 
       getPostsSection.appendChild(postCard);
-      postCard.appendChild(postTitleContainer);
+      postCard.appendChild(titleLink);
+      titleLink.appendChild(postTitleContainer);
       postCard.appendChild(postDate);
       postCard.appendChild(postBodyContainer);
     }
