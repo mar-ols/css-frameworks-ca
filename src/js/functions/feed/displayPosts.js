@@ -3,7 +3,7 @@ import { getPosts } from "../../api/calls/feed/read.js";
 async function displayPosts() {
   const posts = await getPosts();
   posts.forEach((post) => {
-    if (post.title && post.body) {
+    if (post.title && post.body && post.media) {
       const getPostsSection = document.querySelector("#postsSection");
 
       // Post container
@@ -17,19 +17,17 @@ async function displayPosts() {
       postCard.classList.add("rounded");
       postCard.classList.add("m-1");
 
-      if (post.media) {
-        // Post image container
-        const postImageContainer = document.createElement("div");
+      // Post image container
+      const postImageContainer = document.createElement("div");
 
-        // Post image
-        const postImage = document.createElement("img");
-        postImage.classList.add("img-fluid");
-        postImage.classList.add("rounded");
-        postImage.src = `${post.media}`;
+      // Post image
+      const postImage = document.createElement("img");
+      postImage.classList.add("img-fluid");
+      postImage.classList.add("rounded");
+      postImage.src = `${post.media}`;
 
-        postCard.appendChild(postImageContainer);
-        postImageContainer.appendChild(postImage);
-      }
+      postCard.appendChild(postImageContainer);
+      postImageContainer.appendChild(postImage);
 
       // Post title link
       const titleLink = document.createElement("a");
