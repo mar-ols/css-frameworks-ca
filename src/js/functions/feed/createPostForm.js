@@ -1,5 +1,5 @@
 import { createPost } from "../../api/calls/feed/create.js";
-import { createPostSuccess } from "../userMessages/createPostSuccess.js";
+import { feedUserFeedback } from "../userMessages/feed/postFeedbackTemplate.js";
 
 export function getNewPostData() {
   try {
@@ -21,7 +21,7 @@ export function getNewPostData() {
         };
 
         createPost(newPost);
-        createPostSuccess();
+        feedUserFeedback(`Hurrah! Post created!`);
       });
     }
   } catch (error) {

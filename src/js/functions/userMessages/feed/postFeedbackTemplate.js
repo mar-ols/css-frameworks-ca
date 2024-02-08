@@ -1,8 +1,8 @@
-export function postDeleted() {
+export function feedUserFeedback(text) {
   const getDialog = document.querySelector("#dialog");
   getDialog.showModal();
   const getDialogTextContainer = document.querySelector("#dialogText");
-  getDialogTextContainer.innerText = `Post deleted!`;
+  getDialogTextContainer.innerText = `${text}`;
 
   const getCloseDialogBtn = document.querySelector("#closeDialogBtn");
 
