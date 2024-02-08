@@ -12,7 +12,7 @@ export async function displayPosts() {
     const getProfile = loadStorage("profile");
 
     posts.forEach((post) => {
-      if (post.title && post.body && post.media) {
+      if (post.title && post.body) {
         const postContent = `${post.title}${post.body}`;
 
         if (!uniquePost.has(postContent)) {
@@ -97,6 +97,7 @@ export async function displayPosts() {
             const deletePostContainer = document.createElement("p");
             deletePostContainer.setAttribute("id", `${post.id}`);
             deletePostContainer.classList.add("deleteBtn");
+            deletePostContainer.classList.add("text-danger");
             deletePostContainer.classList.add("small");
             deletePostContainer.classList.add("px-2");
             deletePostContainer.classList.add("text-decoration-underline");
