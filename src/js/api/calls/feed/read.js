@@ -4,7 +4,7 @@ import { loader } from "../../../functions/loader.js";
 
 export async function getPosts() {
   loader();
-  const getPostsAPI = API_BASE + API_POSTS + `?_author=true&limit=50`;
+  const getPostsAPI = API_BASE + API_POSTS + `?_author=true`;
   const token = loadStorage("token");
 
   try {
@@ -18,7 +18,6 @@ export async function getPosts() {
     if (response.ok) {
       const getLoader = document.querySelector(".loader");
       getLoader.classList.remove("loader");
-      console.log(posts);
       return posts;
     }
   } catch (error) {
