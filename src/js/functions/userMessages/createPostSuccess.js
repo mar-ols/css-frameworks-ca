@@ -1,4 +1,4 @@
-export function createPostSuccess() {
+function createPostSuccess() {
   const closeCreatePostBtn = document.querySelector("#closeCreatePostBtn");
 
   closeCreatePostBtn.addEventListener("click", () => {
@@ -11,5 +11,3 @@ export function createPostSuccess() {
     }
   };
 }
-
-createPostSuccess();

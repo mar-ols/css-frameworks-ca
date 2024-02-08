@@ -18,12 +18,9 @@ export function getNewPostData() {
           body,
           media,
         };
-        console.log(newPost);
 
         createPost(newPost);
       });
     }
   } catch {}
 }
-
-getNewPostData();

@@ -20,6 +20,7 @@ export function errorMsg() {
   error.appendChild(errorText);
 
   const displayError = document.querySelector(".errorMsg");
-  console.log(displayError);
-  displayError.appendChild(errorContainer);
+  if (displayError) {
+    displayError.appendChild(errorContainer);
+  }
 }

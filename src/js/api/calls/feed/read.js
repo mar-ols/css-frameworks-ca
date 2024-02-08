@@ -8,7 +8,7 @@ export async function getPosts() {
   const token = loadStorage("token");
 
   try {
-    let response = await fetch(getPostsAPI, {
+    const response = await fetch(getPostsAPI, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,

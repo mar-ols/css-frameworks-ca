@@ -1,7 +1,7 @@
 import { getPosts } from "../../api/calls/feed/read.js";
 import { errorMsg } from "../../error.js";
 
-async function displayPosts() {
+export async function displayPosts() {
   try {
     const posts = await getPosts();
     const uniquePost = new Set();
@@ -94,5 +94,3 @@ async function displayPosts() {
     errorMsg();
   }
 }
-
-displayPosts();
