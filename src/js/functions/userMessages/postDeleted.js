@@ -1,15 +1,17 @@
 export function postDeleted() {
-  const getDeletedPostDialog = document.querySelector("#postDeleted");
-  getDeletedPostDialog.showModal();
+  const getDialog = document.querySelector("#dialog");
+  getDialog.showModal();
+  const getDialogTextContainer = document.querySelector("#dialogText");
+  getDialogTextContainer.innerText = `Post deleted!`;
 
-  const closeDeletedPostBtn = document.querySelector("#closeDeletedPost");
+  const getCloseDialogBtn = document.querySelector("#closeDialogBtn");
 
-  closeDeletedPostBtn.addEventListener("click", () => {
+  getCloseDialogBtn.addEventListener("click", () => {
     location.reload();
   });
 
   window.onclick = function (event) {
-    if (event.target == getDeletedPostDialog) {
+    if (event.target == getDialog) {
       location.reload();
     }
   };

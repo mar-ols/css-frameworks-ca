@@ -18,6 +18,7 @@ export async function getPosts() {
     if (response.ok) {
       const getLoader = document.querySelector(".loader");
       getLoader.classList.remove("loader");
+      console.log(posts);
       return posts;
     }
   } catch (error) {

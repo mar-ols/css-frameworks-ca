@@ -117,32 +117,15 @@
             Post
           </button>
         </form>
-        <dialog id="successfulNewPost" class="pt-4 pb-3 px-6 border-secondary">
+        <dialog id="dialog" class="pt-4 pb-3 px-6 border-secondary">
           <div class="d-flex">
             <div class="col-10 pt-1">
-              <p>Success!</p>
+              <p id="dialogText">Post created!</p>
             </div>
             <div class="col-1">
               <button
                 type="button"
-                id="closeCreatePostBtn"
-                class="btn"
-                aria-label="Close"
-              >
-                &times;
-              </button>
-            </div>
-          </div>
-        </dialog>
-        <dialog id="postDeleted" class="pt-4 pb-3 px-6 border-secondary">
-          <div class="d-flex">
-            <div class="col-10 pt-1">
-              <p>Post deleted.</p>
-            </div>
-            <div class="col-1">
-              <button
-                type="button"
-                id="closeDeletedPost"
+                id="closeDialogBtn"
                 class="btn"
                 aria-label="Close"
               >

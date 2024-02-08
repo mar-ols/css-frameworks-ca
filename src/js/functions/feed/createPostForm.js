@@ -1,4 +1,5 @@
 import { createPost } from "../../api/calls/feed/create.js";
+import { createPostSuccess } from "../userMessages/createPostSuccess.js";
 
 export function getNewPostData() {
   try {
@@ -20,7 +21,10 @@ export function getNewPostData() {
         };
 
         createPost(newPost);
+        createPostSuccess();
       });
     }
-  } catch {}
+  } catch (error) {
+    console.error(error);
+  }
 }
