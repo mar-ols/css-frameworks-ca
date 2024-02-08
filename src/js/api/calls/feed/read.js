@@ -1,11 +1,12 @@
 import { API_BASE, API_POSTS } from "../../constants.js";
 import { loadStorage } from "../../../functions/storage/localStorage.js";
-
-export let offset = 0;
+import { loader } from "../../../functions/loader.js";
 
 export async function getPosts() {
-  const getPostsAPI = API_BASE + API_POSTS + `?limit=15&offset=${offset}`;
+  loader();
+  const getPostsAPI = API_BASE + API_POSTS + `?_author=true&limit=50`;
   const token = loadStorage("token");
+
   try {
     let response = await fetch(getPostsAPI, {
       headers: {
@@ -15,6 +16,9 @@ export async function getPosts() {
     });
     const posts = await response.json();
     if (response.ok) {
+      const getLoader = document.querySelector(".loader");
+      getLoader.classList.remove("loader");
+      console.log(posts);
       return posts;
     }
   } catch (error) {
@@ -23,7 +27,8 @@ export async function getPosts() {
 }
 
 export async function getPost(id) {
-  const getPostsAPI = API_BASE + API_POSTS + `/` + id;
+  loader();
+  const getPostsAPI = API_BASE + API_POSTS + `/` + id + `?_author=true`;
   const token = loadStorage("token");
   try {
     let response = await fetch(getPostsAPI, {
@@ -34,6 +39,8 @@ export async function getPost(id) {
     });
     const post = await response.json();
     if (response.ok) {
+      const getLoader = document.querySelector(".loader");
+      getLoader.classList.remove("loader");
       return post;
     }
   } catch (error) {
