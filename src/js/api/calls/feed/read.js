@@ -16,7 +16,6 @@ export async function getPosts() {
     });
     const posts = await response.json();
     if (response.ok) {
-      console.log(posts);
       const getLoader = document.querySelector(".loader");
       getLoader.classList.remove("loader");
       return posts;

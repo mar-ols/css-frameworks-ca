@@ -14,9 +14,7 @@ export async function createPost(newPost) {
       body: JSON.stringify(newPost),
     };
     const response = await fetch(createPostAPI, postData);
-    console.log(response);
     const newPostResult = await response.json();
-    console.log(newPostResult);
     if (newPostResult.ok) {
       return newPostResult;
     }

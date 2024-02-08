@@ -1,10 +1,15 @@
 import { getPosts } from "../../api/calls/feed/read.js";
 import { errorMsg } from "../../error.js";
+import { loadStorage } from "../storage/localStorage.js";
+import { removePost } from "../../api/calls/feed/delete.js";
+import { postDeleted } from "../userMessages/postDeleted.js";
 
 export async function displayPosts() {
   try {
     const posts = await getPosts();
     const uniquePost = new Set();
+
+    const getProfile = loadStorage("profile");
 
     posts.forEach((post) => {
       if (post.title && post.body && post.media) {
@@ -87,6 +92,24 @@ export async function displayPosts() {
           postCard.appendChild(postAuthor);
           postCard.appendChild(postDate);
           postCard.appendChild(postBodyContainer);
+
+          if (getProfile.userName === post.author.name) {
+            const deletePostContainer = document.createElement("p");
+            deletePostContainer.setAttribute("id", `${post.id}`);
+            deletePostContainer.classList.add("deleteBtn");
+            deletePostContainer.classList.add("small");
+            deletePostContainer.classList.add("px-2");
+            deletePostContainer.classList.add("text-decoration-underline");
+            deletePostContainer.innerText = `Delete post`;
+
+            postCard.appendChild(deletePostContainer);
+
+            const getDeleteBtn = document.getElementById(`${post.id}`);
+            getDeleteBtn.addEventListener("click", () => {
+              removePost(post.id);
+              postDeleted();
+            });
+          }
         }
       }
     });
