@@ -2,17 +2,22 @@ import { getPosts } from "../feed/read.js";
 import { loadStorage } from "../../../functions/storage/localStorage.js";
 import { removePost } from "../feed/delete.js";
 import { feedUserFeedback } from "../../../functions/userMessages/feed/postFeedbackTemplate.js";
+import { setUserPic } from "../../../functions/profile/profilePic.js";
 
 async function getUsersOwnPosts() {
   const posts = await getPosts();
   const uniquePost = new Set();
-
   const getProfile = loadStorage("profile");
+
+  if (getProfile.userAvatar) {
+    setUserPic(getProfile.userAvatar);
+  }
+
+  const setUserName = document.querySelector("#profileUsername");
+  setUserName.innerText = getProfile.userName;
+
   posts.forEach((post) => {
     if (post.author.name === getProfile.userName) {
-      const setUserName = document.querySelector("#profileUsername");
-      setUserName.innerText = post.author.name;
-
       if (post.title && post.body && post.media) {
         const postContent = `${post.title}${post.body}`;
         if (!uniquePost.has(postContent)) {

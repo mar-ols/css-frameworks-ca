@@ -21,7 +21,6 @@ export async function login(user) {
         userName: json.name,
         userEmail: json.email,
         userAvatar: json.avatar,
-        userBanner: json.banner,
       });
 
       window.location.href = "profile/";
