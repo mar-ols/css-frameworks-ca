@@ -2,12 +2,12 @@ import { API_BASE, API_POSTS } from "../../constants.js";
 import { loadStorage } from "../../../functions/storage/localStorage.js";
 
 export async function removePost(id) {
-  const removePostAPI = API_BASE + API_POSTS + `/` + id;
   const token = loadStorage("token");
   try {
     if (!id) {
       throw new Error("Delete requires a post ID.");
     }
+    const removePostAPI = API_BASE + API_POSTS + `/` + id;
     const response = await fetch(removePostAPI, {
       method: "DELETE",
       headers: {

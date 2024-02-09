@@ -19,6 +19,6 @@ export async function createPost(newPost) {
       return newPostResult;
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }

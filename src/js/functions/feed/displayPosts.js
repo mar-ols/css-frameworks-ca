@@ -94,6 +94,18 @@ export async function displayPosts() {
           postCard.appendChild(postBodyContainer);
 
           if (getProfile.userName === post.author.name) {
+            const userActions = document.createElement("div");
+            userActions.classList.add("userActions");
+            userActions.classList.add("d-flex");
+            userActions.classList.add("justify-content-between");
+
+            const updatePostContainer = document.createElement("p");
+            updatePostContainer.classList.add("text-secondary");
+            updatePostContainer.classList.add("small");
+            updatePostContainer.classList.add("px-2");
+            updatePostContainer.classList.add("text-decoration-underline");
+            updatePostContainer.innerText = `Update post`;
+
             const deletePostContainer = document.createElement("p");
             deletePostContainer.setAttribute("id", `${post.id}`);
             deletePostContainer.classList.add("deleteBtn");
@@ -103,7 +115,9 @@ export async function displayPosts() {
             deletePostContainer.classList.add("text-decoration-underline");
             deletePostContainer.innerText = `Delete post`;
 
-            postCard.appendChild(deletePostContainer);
+            postCard.appendChild(userActions);
+            userActions.appendChild(updatePostContainer);
+            userActions.appendChild(deletePostContainer);
 
             const getDeleteBtn = document.getElementById(`${post.id}`);
             getDeleteBtn.addEventListener("click", () => {

@@ -105,11 +105,24 @@
         >
           <h2 class="text-center">Create new post</h2>
           <label for="postTitle">Title*:</label>
-          <input type="text" id="postTitle" name="title" class="mb-2" />
+          <input
+            type="text"
+            id="postTitle"
+            name="title"
+            class="mb-2"
+            required
+          />
           <label for="postImgURL">Image URL*:</label>
-          <input type="text" id="postImgURL" name="postImgURL" class="mb-2" />
+          <input
+            type="text"
+            id="postImgURL"
+            name="postImgURL"
+            class="mb-2"
+            required
+          />
           <label for="postBody">Post*:</label>
-          <textarea id="postBody" name="body" class="pb-6"></textarea>
+          <textarea id="postBody" name="body" class="pb-6" required></textarea>
+          <p class="small text-secondary">Max. 280 char.</p>
           <button
             id="createPostBtn"
             class="btn btn-info border-secondary col-5 col-xl-3 mb-1"
