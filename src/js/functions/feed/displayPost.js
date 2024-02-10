@@ -1,5 +1,5 @@
 import { getPost } from "../../api/calls/feed/read.js";
-import { errorMsg } from "../../error.js";
+import { errorMsg } from "../error.js";
 import { id } from "../../api/constants.js";
 
 async function displayPost() {
