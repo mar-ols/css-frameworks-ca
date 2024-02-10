@@ -7,7 +7,7 @@
       name="description"
       content="Your personal profile page for introverti."
     />
-    <title>introverti - home</title>
+    <title>introverti - profile</title>
     <link rel="stylesheet" href="../dist/css/index.css" />
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script
@@ -81,7 +81,7 @@
     <main class="mt-4">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-7 col-md-3 col-lg-4 col-xl-3 mx-sm-auto">
+          <section class="col-sm-7 col-md-3 col-lg-4 col-xl-3 mx-sm-auto">
             <div class="d-flex align-items-center ms-1">
               <h1 id="profileUsername"></h1>
               <img
@@ -152,11 +152,13 @@
                 />
               </div>
             </div>
-          </div>
+          </section>
           <section
             id="usersOwnPosts"
-            class="main d-md-flex flex-wrap col-10 col-sm-8 col-md-7 col-lg-6 mx-auto my-3"
-          ></section>
+            class="d-md-flex flex-wrap col-10 col-sm-8 col-md-7 col-lg-6 mx-auto my-3"
+          >
+            <div class="main errorMsg"></div>
+          </section>
         </div>
       </div>
       <dialog class="dialog pt-4 pb-3 px-6 border-secondary">

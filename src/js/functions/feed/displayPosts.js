@@ -48,7 +48,7 @@ export async function displayPosts() {
           titleLink.href = "singlePost/index.html?id=" + `${post.id}`;
           titleLink.classList.add("text-secondary");
           // Post title text
-          const postTitleContainer = document.createElement("p");
+          const postTitleContainer = document.createElement("h5");
           postTitleContainer.innerText = postTitleContainer;
           postTitleContainer.classList.add("px-2");
           postTitleContainer.classList.add("pt-2");

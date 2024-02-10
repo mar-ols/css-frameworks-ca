@@ -1,5 +1,5 @@
-import { getUsersOwnPosts } from "../functions/profile/getUserPosts.js";
+import { displayUserPosts } from "../functions/profile/displayUserPosts.js";
 import { logout } from "../functions/profile/logout.js";
 
-getUsersOwnPosts();
+displayUserPosts();
 logout();

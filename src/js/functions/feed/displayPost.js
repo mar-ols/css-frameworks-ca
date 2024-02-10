@@ -8,6 +8,7 @@ async function displayPost() {
     const getSinglePost = await getPost(id);
 
     const getH1 = document.querySelector("#singlePostH1");
+    getH1.classList.add("text-secondary");
     getH1.innerText = getSinglePost.title;
 
     const imgContainer = document.querySelector("#imgContainer");

@@ -1,23 +1,25 @@
-import { getPosts } from "../../api/calls/feed/read.js";
+import { getUserPosts } from "../../api/calls/profile/getUserPosts.js";
+import { errorMsg } from "../error.js";
 import { loadStorage } from "../storage/localStorage.js";
 import { removePost } from "../../api/calls/feed/delete.js";
 import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
 import { setUserPic } from "./profilePic.js";
 
-export async function getUsersOwnPosts() {
-  const posts = await getPosts();
-  const uniquePost = new Set();
-  const getProfile = loadStorage("profile");
+export async function displayUserPosts() {
+  try {
+    const posts = await getUserPosts();
 
-  if (getProfile.userAvatar) {
-    setUserPic(getProfile.userAvatar);
-  }
+    const uniquePost = new Set();
+    const getProfile = loadStorage("profile");
 
-  const setUserName = document.querySelector("#profileUsername");
-  setUserName.innerText = getProfile.userName;
+    if (getProfile.userAvatar) {
+      setUserPic(getProfile.userAvatar);
+    }
 
-  posts.forEach((post) => {
-    if (post.author.name === getProfile.userName) {
+    const setUserName = document.querySelector("#profileUsername");
+    setUserName.innerText = getProfile.userName;
+
+    posts.forEach((post) => {
       if (post.title && post.body && post.media) {
         const postContent = `${post.title}${post.body}`;
         if (!uniquePost.has(postContent)) {
@@ -51,7 +53,7 @@ export async function getUsersOwnPosts() {
           titleLink.href = "../feed/singlePost/index.html?id=" + `${post.id}`;
           titleLink.classList.add("text-secondary");
           // Post title text
-          const postTitleContainer = document.createElement("h3");
+          const postTitleContainer = document.createElement("h5");
           postTitleContainer.innerText = postTitleContainer;
           postTitleContainer.classList.add("px-2");
           postTitleContainer.classList.add("pt-2");
@@ -61,7 +63,7 @@ export async function getUsersOwnPosts() {
           const postAuthor = document.createElement("p");
           postAuthor.classList.add("px-2");
           postAuthor.classList.add("mb-0");
-          postAuthor.innerText = `by ${post.author.name}`;
+          postAuthor.innerText = `by ${getProfile.userName}`;
 
           // Post date
           const neaterDate = new Date(post.created).toLocaleDateString(
@@ -130,6 +132,9 @@ export async function getUsersOwnPosts() {
           });
         }
       }
-    }
-  });
+    });
+  } catch (error) {
+    errorMsg();
+    console.error(error);
+  }
 }
