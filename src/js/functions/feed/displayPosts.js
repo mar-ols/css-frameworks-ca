@@ -39,7 +39,6 @@ export async function displayPosts() {
           postImage.classList.add("img-fluid");
           postImage.classList.add("rounded");
           postImage.src = `${post.media}`;
-
           postCard.appendChild(postImageContainer);
           postImageContainer.appendChild(postImage);
 
@@ -49,7 +48,6 @@ export async function displayPosts() {
           titleLink.classList.add("text-secondary");
           // Post title text
           const postTitleContainer = document.createElement("h5");
-          postTitleContainer.innerText = postTitleContainer;
           postTitleContainer.classList.add("px-2");
           postTitleContainer.classList.add("pt-2");
           postTitleContainer.innerText = `${post.title}`;
