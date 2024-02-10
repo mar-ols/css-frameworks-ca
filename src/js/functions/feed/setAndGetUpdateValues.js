@@ -4,7 +4,7 @@ import { updatePost } from "../../api/calls/feed/update.js";
 import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
 import { logout } from "../profile/logout.js";
 
-async function setValues() {
+async function setAndGetUpdateValues() {
   try {
     const getValues = await getPost(id);
 
@@ -45,5 +45,5 @@ async function setValues() {
   }
 }
 
-setValues();
+setAndGetUpdateValues();
 logout();

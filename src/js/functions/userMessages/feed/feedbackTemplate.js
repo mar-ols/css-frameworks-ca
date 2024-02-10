@@ -1,3 +1,5 @@
+import { id } from "../../../api/constants.js";
+
 export function userFeedback(text) {
   const getDialog = document.querySelector(".dialog");
   getDialog.showModal();
@@ -21,12 +23,12 @@ export function userFeedback(text) {
 
   if (text === `Post updated`) {
     closeBtn.addEventListener("click", () => {
-      window.location.href = "../";
+      window.location.href = `index.html?id=${id}`;
     });
 
     window.onclick = function (event) {
       if (event.target === getDialog) {
-        window.location.href = "../";
+        window.location.href = `index.html?id=${id}`;
       }
     };
   }
