@@ -2,7 +2,7 @@ import { getPosts } from "../../api/calls/feed/read.js";
 import { loadStorage } from "../storage/localStorage.js";
 import { removePost } from "../../api/calls/feed/delete.js";
 import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
-import { setUserPic } from "../profile/profilePic.js";
+import { setUserPic } from "./profilePic.js";
 
 export async function getUsersOwnPosts() {
   const posts = await getPosts();

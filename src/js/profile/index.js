@@ -1,3 +1,3 @@
-import { getUsersOwnPosts } from "../functions/feed/getUserPosts.js";
+import { getUsersOwnPosts } from "../functions/profile/getUserPosts.js";
 
 getUsersOwnPosts();
