@@ -1,7 +1,7 @@
 import { getPosts } from "../feed/read.js";
 import { loadStorage } from "../../../functions/storage/localStorage.js";
 import { removePost } from "../feed/delete.js";
-import { feedUserFeedback } from "../../../functions/userMessages/feed/postFeedbackTemplate.js";
+import { userFeedback } from "../../../functions/userMessages/feed/postFeedbackTemplate.js";
 import { setUserPic } from "../../../functions/profile/profilePic.js";
 
 async function getUsersOwnPosts() {
@@ -120,7 +120,7 @@ async function getUsersOwnPosts() {
           const getDeleteBtn = document.getElementById(`${post.id}`);
           getDeleteBtn.addEventListener("click", () => {
             removePost(post.id);
-            feedUserFeedback(`Post deleted!`);
+            userFeedback(`Post deleted!`);
           });
         }
       }

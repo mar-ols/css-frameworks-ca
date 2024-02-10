@@ -2,7 +2,7 @@ import { getPosts } from "../../api/calls/feed/read.js";
 import { errorMsg } from "../../error.js";
 import { loadStorage } from "../storage/localStorage.js";
 import { removePost } from "../../api/calls/feed/delete.js";
-import { feedUserFeedback } from "../userMessages/feed/postFeedbackTemplate.js";
+import { userFeedback } from "../userMessages/feed/postFeedbackTemplate.js";
 
 export async function displayPosts() {
   try {
@@ -130,7 +130,7 @@ export async function displayPosts() {
             const getDeleteBtn = document.getElementById(`${post.id}`);
             getDeleteBtn.addEventListener("click", () => {
               removePost(post.id);
-              feedUserFeedback(`Post deleted!`);
+              userFeedback(`Post deleted!`);
             });
           }
         }

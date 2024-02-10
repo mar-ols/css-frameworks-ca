@@ -94,6 +94,7 @@
           id="updatePostTitle"
           name="updateTitle"
           class="mb-2"
+          required
         />
         <label for="updatePostImgURL">Image URL*:</label>
         <input
@@ -101,9 +102,16 @@
           id="updatePostImgURL"
           name="updatePostImgURL"
           class="mb-2"
+          required
         />
         <label for="updatePostBody">Post*:</label>
-        <textarea id="updatePostBody" name="updateBody" class="pb-6"></textarea>
+        <textarea
+          id="updatePostBody"
+          name="updateBody"
+          class="pb-6"
+          required
+        ></textarea>
+        <p class="small text-secondary">Max. 280 char.</p>
         <button
           id="updatePostBtn"
           class="btn btn-info border-secondary col-5 col-xl-3 mb-1"

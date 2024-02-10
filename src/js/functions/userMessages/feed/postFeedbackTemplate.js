@@ -1,4 +1,4 @@
-export function feedUserFeedback(text) {
+export function userFeedback(text) {
   const getDialog = document.querySelector(".dialog");
   getDialog.showModal();
   const getDialogTextContainer = document.querySelector(".dialogText");
@@ -15,4 +15,16 @@ export function feedUserFeedback(text) {
       location.reload();
     }
   };
+
+  if (text === `Post updated`) {
+    getCloseDialogBtn.addEventListener("click", () => {
+      window.location.href = "../";
+    });
+
+    window.onclick = function (event) {
+      if (event.target == getDialog) {
+        window.location.href = "../";
+      }
+    };
+  }
 }
