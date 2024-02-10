@@ -1,5 +1,5 @@
 import { API_BASE, API_LOGIN } from "../constants.js";
-import { loginUnsuccessful } from "../../functions/userMessages/loginUnsuccessful.js";
+import { loginRegSuccess } from "../../functions/userMessages/registerSuccess.js";
 import * as storage from "../../functions/storage/localStorage.js";
 
 export async function login(user) {
@@ -27,7 +27,7 @@ export async function login(user) {
     } else {
       const status = json.statusCode;
       if (status === 401) {
-        loginUnsuccessful();
+        loginRegSuccess(`Wrong email or password!`);
       }
     }
   } catch (error) {

@@ -2,7 +2,7 @@ import { getPosts } from "../../api/calls/feed/read.js";
 import { errorMsg } from "../error.js";
 import { loadStorage } from "../storage/localStorage.js";
 import { removePost } from "../../api/calls/feed/delete.js";
-import { userFeedback } from "../userMessages/feed/postFeedbackTemplate.js";
+import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
 
 export async function displayPosts() {
   try {

@@ -1,7 +1,7 @@
 import { getPost } from "../../api/calls/feed/read.js";
 import { id } from "../../api/constants.js";
 import { updatePost } from "../../api/calls/feed/update.js";
-import { userFeedback } from "../userMessages/feed/postFeedbackTemplate.js";
+import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
 
 async function setValues() {
   try {

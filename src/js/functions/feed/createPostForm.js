@@ -1,5 +1,5 @@
 import { createPost } from "../../api/calls/feed/create.js";
-import { userFeedback } from "../userMessages/feed/postFeedbackTemplate.js";
+import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
 
 export function getNewPostData() {
   try {

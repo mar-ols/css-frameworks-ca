@@ -1,10 +1,10 @@
-import { getPosts } from "../feed/read.js";
-import { loadStorage } from "../../../functions/storage/localStorage.js";
-import { removePost } from "../feed/delete.js";
-import { userFeedback } from "../../../functions/userMessages/feed/postFeedbackTemplate.js";
-import { setUserPic } from "../../../functions/profile/profilePic.js";
+import { getPosts } from "../../api/calls/feed/read.js";
+import { loadStorage } from "../storage/localStorage.js";
+import { removePost } from "../../api/calls/feed/delete.js";
+import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
+import { setUserPic } from "../profile/profilePic.js";
 
-async function getUsersOwnPosts() {
+export async function getUsersOwnPosts() {
   const posts = await getPosts();
   const uniquePost = new Set();
   const getProfile = loadStorage("profile");
@@ -97,11 +97,16 @@ async function getUsersOwnPosts() {
 
           // Update post
           const updatePostContainer = document.createElement("p");
-          updatePostContainer.classList.add("text-secondary");
-          updatePostContainer.classList.add("small");
-          updatePostContainer.classList.add("px-2");
-          updatePostContainer.classList.add("text-decoration-underline");
-          updatePostContainer.innerText = `Update post`;
+
+          // Update post link
+          const updatePostLink = document.createElement("a");
+          updatePostLink.href =
+            "../feed/singlePost/update.html?id=" + `${post.id}`;
+          updatePostLink.classList.add("text-secondary");
+          updatePostLink.classList.add("small");
+          updatePostLink.classList.add("px-2");
+          updatePostLink.classList.add("text-decoration-underline");
+          updatePostLink.innerText = `Update post`;
 
           // Delete post
           const deletePostContainer = document.createElement("p");
@@ -114,6 +119,7 @@ async function getUsersOwnPosts() {
           deletePostContainer.innerText = `Delete post`;
 
           postCard.appendChild(userActions);
+          updatePostContainer.appendChild(updatePostLink);
           userActions.appendChild(updatePostContainer);
           userActions.appendChild(deletePostContainer);
 
@@ -127,5 +133,3 @@ async function getUsersOwnPosts() {
     }
   });
 }
-
-getUsersOwnPosts();
