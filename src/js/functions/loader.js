@@ -8,5 +8,7 @@ export function loader() {
   loaderContainer.appendChild(spinningLoader);
 
   const main = document.querySelector(".main");
-  main.appendChild(loaderContainer);
+  if (main) {
+    main.appendChild(loaderContainer);
+  }
 }

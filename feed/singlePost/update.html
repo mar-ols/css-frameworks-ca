@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     ></script>
     <script
-      src="../../src/js/functions/feed/displayPost.js"
+      src="../../src/js/functions/feed/setUpdateValues.js"
       type="module"
       defer
     ></script>
@@ -111,6 +111,18 @@
           Update
         </button>
       </form>
+      <dialog class="dialog pt-4 pb-3 px-6 border-secondary">
+        <div class="d-flex">
+          <div class="col-10 pt-1">
+            <p class="dialogText"></p>
+          </div>
+          <div class="col-1">
+            <button type="button" class="closeDialogBtn btn" aria-label="Close">
+              &times;
+            </button>
+          </div>
+        </div>
+      </dialog>
     </main>
     <footer class="bg-secondary py-3">
       <ul class="list-group">

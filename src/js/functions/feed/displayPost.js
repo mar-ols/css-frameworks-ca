@@ -1,11 +1,6 @@
 import { getPost } from "../../api/calls/feed/read.js";
 import { errorMsg } from "../../error.js";
-
-const queryString = document.location.search;
-
-const params = new URLSearchParams(queryString);
-
-const id = params.get("id");
+import { id } from "../../api/constants.js";
 
 async function displayPost() {
   try {

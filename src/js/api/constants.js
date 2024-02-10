@@ -4,3 +4,9 @@ export const API_LOGIN = "/auth/login";
 export const API_POSTS = "/posts";
 export const API_FEED = "/posts/following";
 export const API_PROFILES = "/profiles";
+
+const queryString = document.location.search;
+
+const params = new URLSearchParams(queryString);
+
+export const id = params.get("id");

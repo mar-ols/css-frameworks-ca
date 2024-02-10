@@ -48,7 +48,7 @@ export async function displayPosts() {
           titleLink.href = "singlePost/index.html?id=" + `${post.id}`;
           titleLink.classList.add("text-secondary");
           // Post title text
-          const postTitleContainer = document.createElement("h3");
+          const postTitleContainer = document.createElement("p");
           postTitleContainer.innerText = postTitleContainer;
           postTitleContainer.classList.add("px-2");
           postTitleContainer.classList.add("pt-2");
@@ -94,18 +94,25 @@ export async function displayPosts() {
           postCard.appendChild(postBodyContainer);
 
           if (getProfile.userName === post.author.name) {
+            //User action container
             const userActions = document.createElement("div");
             userActions.classList.add("userActions");
             userActions.classList.add("d-flex");
             userActions.classList.add("justify-content-between");
 
+            // Update post
             const updatePostContainer = document.createElement("p");
-            updatePostContainer.classList.add("text-secondary");
-            updatePostContainer.classList.add("small");
-            updatePostContainer.classList.add("px-2");
-            updatePostContainer.classList.add("text-decoration-underline");
-            updatePostContainer.innerText = `Update post`;
 
+            // Update post link
+            const updatePostLink = document.createElement("a");
+            updatePostLink.href = "singlePost/update.html?id=" + `${post.id}`;
+            updatePostLink.classList.add("text-secondary");
+            updatePostLink.classList.add("small");
+            updatePostLink.classList.add("px-2");
+            updatePostLink.classList.add("text-decoration-underline");
+            updatePostLink.innerText = `Update post`;
+
+            // Delete post
             const deletePostContainer = document.createElement("p");
             deletePostContainer.setAttribute("id", `${post.id}`);
             deletePostContainer.classList.add("deleteBtn");
@@ -116,6 +123,7 @@ export async function displayPosts() {
             deletePostContainer.innerText = `Delete post`;
 
             postCard.appendChild(userActions);
+            updatePostContainer.appendChild(updatePostLink);
             userActions.appendChild(updatePostContainer);
             userActions.appendChild(deletePostContainer);
 

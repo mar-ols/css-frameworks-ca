@@ -40,7 +40,9 @@ export async function getPost(id) {
     const post = await response.json();
     if (response.ok) {
       const getLoader = document.querySelector(".loader");
-      getLoader.classList.remove("loader");
+      if (getLoader) {
+        getLoader.classList.remove("loader");
+      }
       return post;
     }
   } catch (error) {
