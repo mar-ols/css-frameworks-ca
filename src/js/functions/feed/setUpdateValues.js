@@ -2,6 +2,7 @@ import { getPost } from "../../api/calls/feed/read.js";
 import { id } from "../../api/constants.js";
 import { updatePost } from "../../api/calls/feed/update.js";
 import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
+import { logout } from "../profile/logout.js";
 
 async function setValues() {
   try {
@@ -45,3 +46,4 @@ async function setValues() {
 }
 
 setValues();
+logout();

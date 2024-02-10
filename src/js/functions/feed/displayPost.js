@@ -1,6 +1,7 @@
 import { getPost } from "../../api/calls/feed/read.js";
 import { errorMsg } from "../error.js";
 import { id } from "../../api/constants.js";
+import { logout } from "../profile/logout.js";
 
 async function displayPost() {
   try {
@@ -38,8 +39,6 @@ async function displayPost() {
   }
 }
 
-displayPost();
-
 function backBtn() {
   const getBtn = document.querySelector("#backBtn");
 
@@ -48,4 +47,6 @@ function backBtn() {
   });
 }
 
+displayPost();
 backBtn();
+logout();

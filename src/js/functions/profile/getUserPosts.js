@@ -48,7 +48,7 @@ export async function getUsersOwnPosts() {
 
           // Post title link
           const titleLink = document.createElement("a");
-          titleLink.href = "singlePost/index.html?id=" + `${post.id}`;
+          titleLink.href = "../feed/singlePost/index.html?id=" + `${post.id}`;
           titleLink.classList.add("text-secondary");
           // Post title text
           const postTitleContainer = document.createElement("h3");
