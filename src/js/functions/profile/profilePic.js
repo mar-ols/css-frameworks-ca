@@ -1,5 +1,5 @@
 export function setUserPic(imgURL) {
-  const imgContainer = document.querySelector("#profileImgContainer");
+  const imgContainer = document.querySelector(".profileImgContainer");
   const profilePic = document.createElement("img");
   profilePic.classList.add("img-fluid");
   profilePic.classList.add("rounded");
