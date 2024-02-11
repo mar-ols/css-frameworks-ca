@@ -14,10 +14,8 @@ export async function register(user) {
       body: JSON.stringify(user),
     };
     const response = await fetch(registerURL, postData);
-    console.log(response);
     const json = await response.json();
     const status = json.statusCode;
-    console.log(json);
     if (response.ok) {
       loginRegSuccess(`Registration successful! You can now log in.`);
     } else if (status === 400) {

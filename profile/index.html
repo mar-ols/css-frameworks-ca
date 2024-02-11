@@ -15,6 +15,10 @@
       crossorigin="anonymous"
     ></script>
     <script type="module" src="../src/js/profile/index.js"></script>
+    <script
+      type="module"
+      src="../src/js/functions/profile/changeAvatarForm.js"
+    ></script>
   </head>
   <body class="bg-primary d-flex flex-column">
     <header
@@ -90,7 +94,33 @@
                 class="img-fluid ps-1"
               />
             </div>
-            <div id="profileImgContainer" class="ms-1"></div>
+            <div>
+              <div id="profileImgContainer" class="ms-1"></div>
+              <div class="mb-2">
+                <div id="editProfilePic" class="d-flex align-items-center">
+                  <i class="fa-solid fa-pen" style="color: #516c56"></i>
+                  <div>Edit profile pic</div>
+                </div>
+                <div class="visually-hidden">
+                  <form id="changeAvatarForm">
+                    <label for="changeAvatar"></label>
+                    <input
+                      type="url"
+                      name="changeAvatar"
+                      id="changeAvatar"
+                      class="form-control rounded mb-2 border-secondary"
+                    />
+                    <button
+                      type="submit"
+                      id="changeAvatarBtn"
+                      class="btn btn-info mb-2 border-secondary"
+                    >
+                      Change Avatar
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
             <div class="ms-1 mb-4">
               <p>User bio</p>
               <p>
