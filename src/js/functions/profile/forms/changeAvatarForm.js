@@ -1,6 +1,6 @@
-import { changeAvatar } from "../../api/calls/profile/changeAvatar.js";
-import { loadStorage } from "../storage/localStorage.js";
-import { saveStorage } from "../storage/localStorage.js";
+import { changeAvatar } from "../../../api/calls/profile/changeAvatar.js";
+import { loadStorage } from "../../storage/localStorage.js";
+import { saveStorage } from "../../storage/localStorage.js";
 
 export function getAvatarData() {
   try {
