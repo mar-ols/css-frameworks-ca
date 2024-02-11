@@ -19,6 +19,18 @@ export async function displayOtherUser() {
       setUserPic(otherUser.avatar);
     }
 
+    if (otherUser._count.posts <= 2) {
+      const mainElement = document.querySelector("main");
+      mainElement.classList.add("vh-100");
+    }
+
+    const following = document.querySelector(".following");
+    following.innerText = `Following (${otherUser._count.following})`;
+    const followers = document.querySelector(".followers");
+    followers.innerText = `Followers (${otherUser._count.followers})`;
+
+    console.log(otherUser);
+
     posts.forEach((post) => {
       if (post.title && post.body && post.media) {
         const postContent = `${post.title}${post.body}`;
@@ -86,8 +98,6 @@ export async function displayOtherUser() {
         }
       }
     });
-
-    console.log(otherUser.avatar);
   } catch (error) {
     errorMsg();
     console.error(error);
