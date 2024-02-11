@@ -1,4 +1,6 @@
-export function loginRegSuccess(text) {
+import { id } from "../../../api/constants.js";
+
+export function userFeedback(text) {
   const getDialog = document.querySelector(".dialog");
   getDialog.showModal();
 
@@ -7,29 +9,26 @@ export function loginRegSuccess(text) {
 
   const closeBtn = document.querySelector(".closeDialogBtn");
 
-  if (
-    text === `Wrong email or password!` ||
-    `Looks like this user already exists, please choose a unique username and email.`
-  ) {
+  if (text === `Hurrah! Post created!` || `Post deleted!` || `Avatar updated`) {
     closeBtn.addEventListener("click", () => {
-      getDialog.close();
+      location.reload();
     });
 
     window.onclick = function (event) {
       if (event.target === getDialog) {
-        getDialog.close();
+        location.reload();
       }
     };
   }
 
-  if (text === `Registration successful! You can now log in.`) {
+  if (text === `Post updated`) {
     closeBtn.addEventListener("click", () => {
-      window.location.href = "../../";
+      window.location.href = `index.html?id=${id}`;
     });
 
     window.onclick = function (event) {
       if (event.target === getDialog) {
-        window.location.href = "../../";
+        window.location.href = `index.html?id=${id}`;
       }
     };
   }

@@ -1,4 +1,4 @@
-import { register } from "./register.js";
+import { register } from "../../../api/calls/register.js";
 
 export function getRegisterData() {
   const getRegisterForm = document.querySelector("#registerForm");
@@ -11,14 +11,12 @@ export function getRegisterData() {
       const name = form.name.value;
       const email = form.email.value;
       const password = form.password.value;
-      const banner = form.banner.value;
       const avatar = form.avatar.value;
 
       const user = {
         name,
         email,
         password,
-        banner,
         avatar,
       };
 

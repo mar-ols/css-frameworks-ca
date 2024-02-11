@@ -68,15 +68,6 @@
                 minlength="8"
                 required
               />
-              <label for="banner"
-                >Banner: <span class="text-dark">optional</span></label
-              >
-              <input
-                type="url"
-                name="banner"
-                id="banner"
-                class="form-control rounded mb-2"
-              />
               <label for="avatar"
                 >Avatar: <span class="text-dark">optional</span></label
               >
@@ -96,40 +87,15 @@
                 </button>
               </div>
             </form>
-            <dialog id="successDialog" class="pt-4 pb-3 px-6 border-secondary">
+            <dialog class="dialog pt-4 pb-3 px-6 border-secondary">
               <div class="d-flex">
-                <div class="col-10 pt-1">
-                  <p>Registration successful!</p>
-                  <p>You can now log in.</p>
+                <div class="col-12 pt-1">
+                  <p class="dialogText"></p>
                 </div>
                 <div class="col-1">
                   <button
                     type="button"
-                    id="closeBtn"
-                    class="btn"
-                    aria-label="Close"
-                  >
-                    &times;
-                  </button>
-                </div>
-              </div>
-            </dialog>
-            <dialog
-              id="unSuccessfulDialog"
-              class="pt-3 pb-2 px-4 border-secondary text-center"
-            >
-              <div class="d-flex">
-                <div class="col-10 pt-1">
-                  <p>
-                    Looks like this user already exists, please choose a unique
-                    username and email.
-                  </p>
-                </div>
-                <div class="col-1">
-                  <button
-                    type="button"
-                    id="unSuccessCloseBtn"
-                    class="btn"
+                    class="closeDialogBtn btn"
                     aria-label="Close"
                   >
                     &times;

@@ -1,6 +1,5 @@
-import { API_BASE, API_REGISTER } from "../../api/constants.js";
-import { registerSuccess } from "../userMessages/registerSuccess.js";
-import { registerUnsuccessful } from "../userMessages/registerUnsuccessful.js";
+import { API_BASE, API_REGISTER } from "../constants.js";
+import { loginRegSuccess } from "../../functions/userMessages/registerSuccess.js";
 
 const action = API_REGISTER;
 
@@ -15,14 +14,14 @@ export async function register(user) {
       body: JSON.stringify(user),
     };
     const response = await fetch(registerURL, postData);
-    console.log(response);
     const json = await response.json();
     const status = json.statusCode;
-    console.log(json);
     if (response.ok) {
-      registerSuccess();
+      loginRegSuccess(`Registration successful! You can now log in.`);
     } else if (status === 400) {
-      registerUnsuccessful();
+      loginRegSuccess(
+        `Looks like this user already exists, please choose a unique username and email.`
+      );
     }
   } catch (error) {
     console.error(error);
