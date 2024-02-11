@@ -1,4 +1,4 @@
-import { getUserPosts } from "../../api/calls/profile/getUserPosts.js";
+import { getOwnPosts } from "../../api/calls/profile/getOwnPosts.js";
 import { errorMsg } from "../error.js";
 import { loadStorage } from "../storage/localStorage.js";
 import { removePost } from "../../api/calls/feed/delete.js";
@@ -7,7 +7,7 @@ import { setUserPic } from "./profilePic.js";
 
 export async function displayUserPosts() {
   try {
-    const posts = await getUserPosts();
+    const posts = await getOwnPosts();
 
     const uniquePost = new Set();
     const getProfile = loadStorage("profile");
@@ -43,7 +43,7 @@ export async function displayUserPosts() {
           // Post image
           const postImage = document.createElement("img");
           postImage.classList.add("img-fluid");
-          postImage.classList.add("rounded");
+          postImage.classList.add("rounded-top");
           postImage.src = `${post.media}`;
           postCard.appendChild(postImageContainer);
           postImageContainer.appendChild(postImage);

@@ -37,7 +37,7 @@ export async function displayPosts() {
           // Post image
           const postImage = document.createElement("img");
           postImage.classList.add("img-fluid");
-          postImage.classList.add("rounded");
+          postImage.classList.add("rounded-top");
           postImage.src = `${post.media}`;
           postCard.appendChild(postImageContainer);
           postImageContainer.appendChild(postImage);
@@ -56,7 +56,21 @@ export async function displayPosts() {
           const postAuthor = document.createElement("p");
           postAuthor.classList.add("px-2");
           postAuthor.classList.add("mb-0");
-          postAuthor.innerText = `by ${post.author.name}`;
+          postAuthor.innerText = `by `;
+          // Post author link
+          const authorLink = document.createElement("a");
+
+          if (getProfile.userName === post.author.name) {
+            authorLink.href = "../profile";
+          } else {
+            authorLink.href =
+              "../profile/other-profiles/index.html?author=" +
+              `${post.author.name}`;
+          }
+
+          authorLink.classList.add("text-secondary");
+          authorLink.innerText = `${post.author.name}`;
+          postAuthor.appendChild(authorLink);
 
           // Post date
           const neaterDate = new Date(post.created).toLocaleDateString(

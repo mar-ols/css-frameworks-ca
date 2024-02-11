@@ -2,10 +2,13 @@ import { getPost } from "../../api/calls/feed/read.js";
 import { errorMsg } from "../error.js";
 import { id } from "../../api/constants.js";
 import { logout } from "../profile/logout.js";
+import { loadStorage } from "../storage/localStorage.js";
 
 async function displayPost() {
   try {
     const getSinglePost = await getPost(id);
+
+    const getProfile = loadStorage("profile");
 
     const getH1 = document.querySelector("#singlePostH1");
     getH1.classList.add("text-secondary");
@@ -20,7 +23,21 @@ async function displayPost() {
     imgContainer.appendChild(singlePostImg);
 
     const authorContainer = document.querySelector("#singlePostAuthor");
-    authorContainer.innerText = `by ${getSinglePost.author.name}`;
+    authorContainer.innerText = `by `;
+
+    // Post author link
+    const authorLink = document.createElement("a");
+    authorLink.classList.add("text-secondary");
+    authorLink.innerText = `${getSinglePost.author.name}`;
+    authorContainer.appendChild(authorLink);
+
+    if (getProfile.userName === getSinglePost.author.name) {
+      authorLink.href = `../../profile/`;
+    } else {
+      authorLink.href =
+        "../../profile/other-profiles/index.html?author=" +
+        `${getSinglePost.author.name}`;
+    }
 
     const singlePostDate = document.querySelector("#singlePostDate");
     let neaterDate = new Date(getSinglePost.created).toLocaleDateString(

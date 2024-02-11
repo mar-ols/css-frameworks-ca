@@ -1,11 +1,11 @@
-import { API_BASE, API_PROFILES } from "../../constants.js";
+import { API_BASE, API_PROFILES, API_POSTS } from "../../constants.js";
 import { loadStorage } from "../../../functions/storage/localStorage.js";
 import { loader } from "../../../functions/loader.js";
 
-export async function getUserPosts() {
+export async function getOwnPosts() {
   loader();
   const getUserName = loadStorage("profile");
-  const userPostsAPI = `${API_BASE}${API_PROFILES}/${getUserName.userName}/posts`;
+  const userPostsAPI = `${API_BASE}${API_PROFILES}/${getUserName.userName}${API_POSTS}`;
   const token = loadStorage("token");
 
   try {
