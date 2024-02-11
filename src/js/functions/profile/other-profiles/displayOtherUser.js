@@ -87,7 +87,7 @@ export async function displayOtherUser() {
       }
     });
 
-    console.log(otherUserPosts);
+    console.log(otherUser.avatar);
   } catch (error) {
     errorMsg();
     console.error(error);
