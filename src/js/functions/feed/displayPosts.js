@@ -60,13 +60,8 @@ export async function displayPosts() {
           // Post author link
           const authorLink = document.createElement("a");
 
-          if (getProfile.userName === post.author.name) {
-            authorLink.href = "../profile";
-          } else {
-            authorLink.href =
-              "../profile/other-profiles/index.html?author=" +
-              `${post.author.name}`;
-          }
+          authorLink.href =
+            "../profile/index.html?author=" + `${post.author.name}`;
 
           authorLink.classList.add("text-secondary");
           authorLink.innerText = `${post.author.name}`;

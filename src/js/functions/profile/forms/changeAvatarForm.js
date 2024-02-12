@@ -5,7 +5,6 @@ import { saveStorage } from "../../storage/localStorage.js";
 export function getAvatarData() {
   try {
     const localStorageProfile = loadStorage("profile");
-    console.log(localStorageProfile);
     const changeAvatarForm = document.querySelector("#changeAvatarForm");
 
     if (changeAvatarForm) {
