@@ -11,6 +11,10 @@ export async function updatePostForm() {
       "#updatePostTitle"
     ).value = `${getValues.title}`);
 
+    const setTags = (document.querySelector(
+      "#updatePostTags"
+    ).value = `${getValues.tags}`);
+
     const setImg = (document.querySelector(
       "#updatePostImgURL"
     ).value = `${getValues.media}`);
@@ -26,14 +30,20 @@ export async function updatePostForm() {
         event.preventDefault();
         const form = event.target;
 
+        const tags = [];
+
         const title = form.updateTitle.value;
         const body = form.updateBody.value;
         const media = form.updatePostImgURL.value;
+        const tagList = form.updateTags.value;
+
+        tags.push(tagList);
 
         const updatedPost = {
           title,
           body,
           media,
+          tags,
         };
         updatePost(updatedPost);
         userFeedback(`Post updated`);
