@@ -44,22 +44,28 @@
               />
             </div>
             <form id="loginForm" class="d-flex flex-column p-sm-4">
-              <label for="enterEmail"></label>
+              <label for="enterEmail" class="visually-hidden"
+                >Email address</label
+              >
               <input
                 type="email"
                 name="enterEmail"
                 id="enterEmail"
                 class="rounded border mx-5 mb-2"
+                aria-label="Enter email address"
                 placeholder="Email address"
                 required
               />
-              <label for="enterPassword"></label>
+              <label for="enterPassword" class="visually-hidden"
+                >Password</label
+              >
               <input
                 type="password"
                 name="enterPassword"
                 id="enterPassword"
                 class="rounded border mx-5"
                 placeholder="***********"
+                aria-label="Enter password"
                 minlength="8"
                 required
               />

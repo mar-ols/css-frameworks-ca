@@ -26,6 +26,7 @@ export function postCard(image, title, name, date, body, id) {
     const postImageContainer = document.createElement("div");
     // Post image
     const postImage = document.createElement("img");
+    postImage.setAttribute("alt", "No alt text provided");
     postImage.classList.add("img-fluid");
     postImage.classList.add("col-12");
     postImage.classList.add("rounded-top");
@@ -146,6 +147,7 @@ export function postCard(image, title, name, date, body, id) {
     const postImageContainer = document.createElement("div");
     // Post image
     const postImage = document.createElement("img");
+    postImage.setAttribute("alt", "No alt text provided");
     postImage.classList.add("img-fluid");
     postImage.classList.add("col-12");
     postImage.classList.add("rounded-top");

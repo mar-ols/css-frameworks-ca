@@ -15,6 +15,7 @@ export async function displayPost() {
 
     const imgContainer = document.querySelector("#imgContainer");
     const singlePostImg = document.createElement("img");
+    singlePostImg.setAttribute("alt", "No alt text provided");
     singlePostImg.classList.add("img-fluid");
     singlePostImg.classList.add("rounded-top");
     singlePostImg.classList.add("col-12");
