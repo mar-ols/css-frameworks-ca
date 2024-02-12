@@ -1,10 +1,9 @@
 import { getPost } from "../../api/calls/feed/read.js";
 import { errorMsg } from "../error.js";
 import { id } from "../../api/constants.js";
-import { logout } from "../profile/logout.js";
 import { loadStorage } from "../storage/localStorage.js";
 
-async function displayPost() {
+export async function displayPost() {
   try {
     const getSinglePost = await getPost(id);
 
@@ -31,13 +30,8 @@ async function displayPost() {
     authorLink.innerText = `${getSinglePost.author.name}`;
     authorContainer.appendChild(authorLink);
 
-    if (getProfile.userName === getSinglePost.author.name) {
-      authorLink.href = `../../profile/`;
-    } else {
-      authorLink.href =
-        "../../profile/other-profiles/index.html?author=" +
-        `${getSinglePost.author.name}`;
-    }
+    authorLink.href =
+      "../../profile/index.html?author=" + `${getSinglePost.author.name}`;
 
     const singlePostDate = document.querySelector("#singlePostDate");
     let neaterDate = new Date(getSinglePost.created).toLocaleDateString(
@@ -57,14 +51,10 @@ async function displayPost() {
   }
 }
 
-function backBtn() {
+export function backBtn() {
   const getBtn = document.querySelector("#backBtn");
 
   getBtn.addEventListener("click", () => {
     window.history.back();
   });
 }
-
-displayPost();
-backBtn();
-logout();

@@ -1,23 +1,18 @@
-import { getOwnPosts } from "../../api/calls/profile/getOwnPosts.js";
+import { getUserPosts } from "../../api/calls/profile/getUserPosts.js";
+import { authorName } from "../../api/constants.js";
 import { errorMsg } from "../error.js";
 import { loadStorage } from "../storage/localStorage.js";
 import { removePost } from "../../api/calls/feed/delete.js";
 import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
-import { setUserPic } from "./profilePic.js";
 
 export async function displayUserPosts() {
   try {
-    const posts = await getOwnPosts();
+    const posts = await getUserPosts();
 
     const uniquePost = new Set();
-    const getProfile = loadStorage("profile");
 
-    if (getProfile.userAvatar) {
-      setUserPic(getProfile.userAvatar);
-    }
-
-    const setUserName = document.querySelector("#profileUsername");
-    setUserName.innerText = getProfile.userName;
+    // Denne skal brukes for å toggle om man kan update og delete posts og endre profil-bilde. Der må det brukes if-statements
+    const getStorageProfile = loadStorage("profile");
 
     posts.forEach((post) => {
       if (post.title && post.body && post.media) {
@@ -58,12 +53,6 @@ export async function displayUserPosts() {
           postTitleContainer.classList.add("pt-2");
           postTitleContainer.innerText = `${post.title}`;
 
-          // Post author
-          const postAuthor = document.createElement("p");
-          postAuthor.classList.add("px-2");
-          postAuthor.classList.add("mb-0");
-          postAuthor.innerText = `by ${getProfile.userName}`;
-
           // Post date
           const neaterDate = new Date(post.created).toLocaleDateString(
             "en-US",
@@ -73,6 +62,7 @@ export async function displayUserPosts() {
               day: "2-digit",
             }
           );
+
           const postDate = document.createElement("p");
           postDate.classList.add("px-2");
           postDate.classList.add("small");
@@ -86,49 +76,50 @@ export async function displayUserPosts() {
           getPostsSection.appendChild(postCard);
           postCard.appendChild(titleLink);
           titleLink.appendChild(postTitleContainer);
-          postCard.appendChild(postAuthor);
           postCard.appendChild(postDate);
           postCard.appendChild(postBodyContainer);
 
-          // User action container
-          const userActions = document.createElement("div");
-          userActions.classList.add("userActions");
-          userActions.classList.add("d-flex");
-          userActions.classList.add("justify-content-between");
+          if (getStorageProfile.userName === authorName) {
+            // User action container
+            const userActions = document.createElement("div");
+            userActions.classList.add("userActions");
+            userActions.classList.add("d-flex");
+            userActions.classList.add("justify-content-between");
 
-          // Update post
-          const updatePostContainer = document.createElement("p");
+            // Update post
+            const updatePostContainer = document.createElement("p");
 
-          // Update post link
-          const updatePostLink = document.createElement("a");
-          updatePostLink.href =
-            "../feed/singlePost/update.html?id=" + `${post.id}`;
-          updatePostLink.classList.add("text-secondary");
-          updatePostLink.classList.add("small");
-          updatePostLink.classList.add("px-2");
-          updatePostLink.classList.add("text-decoration-underline");
-          updatePostLink.innerText = `Update post`;
+            // Update post link
+            const updatePostLink = document.createElement("a");
+            updatePostLink.href =
+              "../feed/singlePost/update.html?id=" + `${post.id}`;
+            updatePostLink.classList.add("text-secondary");
+            updatePostLink.classList.add("small");
+            updatePostLink.classList.add("px-2");
+            updatePostLink.classList.add("text-decoration-underline");
+            updatePostLink.innerText = `Update post`;
 
-          // Delete post
-          const deletePostContainer = document.createElement("p");
-          deletePostContainer.setAttribute("id", `${post.id}`);
-          deletePostContainer.classList.add("deleteBtn");
-          deletePostContainer.classList.add("text-danger");
-          deletePostContainer.classList.add("small");
-          deletePostContainer.classList.add("px-2");
-          deletePostContainer.classList.add("text-decoration-underline");
-          deletePostContainer.innerText = `Delete post`;
+            // Delete post
+            const deletePostContainer = document.createElement("p");
+            deletePostContainer.setAttribute("id", `${post.id}`);
+            deletePostContainer.classList.add("deleteBtn");
+            deletePostContainer.classList.add("text-danger");
+            deletePostContainer.classList.add("small");
+            deletePostContainer.classList.add("px-2");
+            deletePostContainer.classList.add("text-decoration-underline");
+            deletePostContainer.innerText = `Delete post`;
 
-          postCard.appendChild(userActions);
-          updatePostContainer.appendChild(updatePostLink);
-          userActions.appendChild(updatePostContainer);
-          userActions.appendChild(deletePostContainer);
+            postCard.appendChild(userActions);
+            updatePostContainer.appendChild(updatePostLink);
+            userActions.appendChild(updatePostContainer);
+            userActions.appendChild(deletePostContainer);
 
-          const getDeleteBtn = document.getElementById(`${post.id}`);
-          getDeleteBtn.addEventListener("click", () => {
-            removePost(post.id);
-            userFeedback(`Post deleted!`);
-          });
+            const getDeleteBtn = document.getElementById(`${post.id}`);
+            getDeleteBtn.addEventListener("click", () => {
+              removePost(post.id);
+              userFeedback(`Post deleted!`);
+            });
+          }
         }
       }
     });

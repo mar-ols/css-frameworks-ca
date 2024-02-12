@@ -23,7 +23,7 @@ export async function login(user) {
         userAvatar: json.avatar,
       });
 
-      window.location.href = "profile/";
+      window.location.href = "feed/";
     } else {
       const status = json.statusCode;
       if (status === 401) {
