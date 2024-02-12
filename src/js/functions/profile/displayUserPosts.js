@@ -11,7 +11,6 @@ export async function displayUserPosts() {
 
     const uniquePost = new Set();
 
-    // Denne skal brukes for å toggle om man kan update og delete posts og endre profil-bilde. Der må det brukes if-statements
     const getStorageProfile = loadStorage("profile");
 
     posts.forEach((post) => {
