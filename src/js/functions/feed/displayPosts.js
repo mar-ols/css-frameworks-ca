@@ -37,6 +37,7 @@ export async function displayPosts() {
           // Post image
           const postImage = document.createElement("img");
           postImage.classList.add("img-fluid");
+          postImage.classList.add("col-12");
           postImage.classList.add("rounded-top");
           postImage.src = `${post.media}`;
           postCard.appendChild(postImageContainer);

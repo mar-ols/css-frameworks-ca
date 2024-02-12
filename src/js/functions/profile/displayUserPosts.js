@@ -38,6 +38,7 @@ export async function displayUserPosts() {
           const postImage = document.createElement("img");
           postImage.classList.add("img-fluid");
           postImage.classList.add("rounded-top");
+          postImage.classList.add("col-12");
           postImage.src = `${post.media}`;
           postCard.appendChild(postImageContainer);
           postImageContainer.appendChild(postImage);
