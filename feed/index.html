@@ -121,14 +121,20 @@
             class="mb-2"
             required
           />
-          <label for="postTags">Tags:</label>
-          <input
-            type="text"
-            id="postTags"
-            name="tags"
-            class="mb-2"
-            placeholder="Separate tags with a comma. Summer, puppies, vacation"
-          />
+          <div class="d-flex justify-content-between">
+            <div class="d-flex flex-column col-4">
+              <label for="postTags">Tag 1:</label>
+              <input type="text" id="postTags" name="tag1" />
+            </div>
+            <div class="d-flex flex-column col-4">
+              <label for="postTags2">Tag 2:</label>
+              <input type="text" id="postTags2" name="tag2" />
+            </div>
+            <div class="d-flex flex-column col-4">
+              <label for="postTags3">Tag 3:</label>
+              <input type="text" id="postTags3" name="tag3" />
+            </div>
+          </div>
           <label for="postImgURL">Image URL*:</label>
           <input
             type="text"

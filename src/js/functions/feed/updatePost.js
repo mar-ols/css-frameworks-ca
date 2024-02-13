@@ -12,8 +12,26 @@ export async function updatePostForm() {
     ).value = `${getValues.title}`);
 
     const setTags = (document.querySelector(
-      "#updatePostTags"
+      "#updateTags1"
     ).value = `${getValues.tags}`);
+
+    if (getValues.tags.length > 1) {
+      for (let i = 0; i < getValues.tags.length; i++) {
+        const setTags = (document.querySelector(
+          "#updateTags1"
+        ).value = `${getValues.tags[0]}`);
+        const setTags2 = (document.querySelector(
+          "#updateTags2"
+        ).value = `${getValues.tags[1]}`);
+        const setTags3 = (document.querySelector(
+          "#updateTags3"
+        ).value = `${getValues.tags[2]}`);
+      }
+    }
+
+    // const setTags2 = (document.querySelector(
+    //   "#updateTags2"
+    // ).value = `${getValues.tags}`);
 
     const setImg = (document.querySelector(
       "#updatePostImgURL"
@@ -35,9 +53,11 @@ export async function updatePostForm() {
         const title = form.updateTitle.value;
         const body = form.updateBody.value;
         const media = form.updatePostImgURL.value;
-        const tagList = form.updateTags.value;
+        const tag1 = form.updateTags1.value;
+        const tag2 = form.updateTags2.value;
+        const tag3 = form.updateTags3.value;
 
-        tags.push(tagList);
+        tags.push(tag1, tag2, tag3);
 
         const updatedPost = {
           title,

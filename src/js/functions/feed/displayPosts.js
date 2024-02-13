@@ -1,9 +1,9 @@
 import { getPosts } from "../../api/calls/feed/read.js";
 import { errorMsg } from "../error.js";
-import { loadStorage } from "../storage/localStorage.js";
 import { removePost } from "../../api/calls/feed/delete.js";
 import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
 import { postCard } from "../displayTemplates/postCard.js";
+import { filterPosts } from "./filterPosts.js";
 
 export async function displayPosts() {
   try {
@@ -11,8 +11,6 @@ export async function displayPosts() {
     const uniquePost = new Set();
 
     const getPostsSection = document.querySelector(".postsSection");
-    const getProfile = loadStorage("profile");
-
     posts.forEach((post) => {
       if (post.title && post.body && post.media) {
         const postContent = `${post.title}${post.body}`;
@@ -30,6 +28,11 @@ export async function displayPosts() {
               post.id
             )
           );
+
+          // Working on filtering posts
+          if (post.tags.length >= 1) {
+            filterPosts(post.tags);
+          }
 
           const getDeleteBtn = document.getElementById(`${post.id}`);
           if (getDeleteBtn) {

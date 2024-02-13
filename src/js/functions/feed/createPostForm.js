@@ -15,9 +15,11 @@ export function getNewPostData() {
         const title = form.title.value;
         const body = form.body.value;
         const media = form.postImgURL.value;
-        const tagList = form.tags.value;
+        const tag1 = form.tag1.value;
+        const tag2 = form.tag2.value;
+        const tag3 = form.tag3.value;
 
-        tags.push(tagList);
+        tags.push(tag1, tag2, tag3);
 
         const newPost = {
           title,
