@@ -25,10 +25,10 @@ export async function displayPosts() {
               post.author.name,
               post.created,
               post.body,
-              post.id
+              post.id,
+              post.tags
             )
           );
-
           // Working on filtering posts
           if (post.tags.length >= 1) {
             filterPosts(post.tags);

@@ -6,7 +6,7 @@ const feed = location.includes("feed");
 const profile = location.includes("profile");
 const singlePost = location.includes("single");
 
-export function postCard(image, title, name, date, body, id) {
+export function postCard(image, title, name, date, body, id, tags) {
   const getProfile = loadStorage("profile");
 
   if (getProfile.userName === name) {
@@ -49,6 +49,28 @@ export function postCard(image, title, name, date, body, id) {
     postTitleContainer.classList.add("pt-2");
     postTitleContainer.innerText = `${title}`;
     titleLink.appendChild(postTitleContainer);
+    postCard.appendChild(titleLink);
+
+    if (tags) {
+      const tagsContainer = document.createElement("div");
+      tagsContainer.classList.add("d-flex");
+      tagsContainer.classList.add("m-0");
+      postCard.appendChild(tagsContainer);
+      for (let i = 0; i < tags.length; i++) {
+        const tagContainer = document.createElement("p");
+        tagContainer.classList.add("col-2");
+        tagContainer.classList.add("m-2");
+        tagContainer.classList.add("bg-info");
+        tagContainer.classList.add("text-black");
+        tagContainer.classList.add("text-center");
+        tagContainer.classList.add("border");
+        tagContainer.classList.add("border-secondary");
+        tagContainer.classList.add("rounded");
+        tagContainer.classList.add("small");
+        tagContainer.innerText = tags[i];
+        tagsContainer.appendChild(tagContainer);
+      }
+    }
 
     // Post author
     const postAuthor = document.createElement("p");
@@ -84,7 +106,6 @@ export function postCard(image, title, name, date, body, id) {
     postBodyContainer.classList.add("px-2");
     postBodyContainer.innerText = `${body}`;
 
-    postCard.appendChild(titleLink);
     if (feed || singlePost) {
       postCard.appendChild(postAuthor);
     }
@@ -154,6 +175,7 @@ export function postCard(image, title, name, date, body, id) {
     postImage.src = `${image}`;
     postCard.appendChild(postImageContainer);
     postImageContainer.appendChild(postImage);
+    postCard.appendChild(postImageContainer);
 
     // Post title link
     const titleLink = document.createElement("a");
@@ -170,6 +192,29 @@ export function postCard(image, title, name, date, body, id) {
     postTitleContainer.classList.add("pt-2");
     postTitleContainer.innerText = `${title}`;
     titleLink.appendChild(postTitleContainer);
+
+    postCard.appendChild(titleLink);
+
+    if (tags) {
+      const tagsContainer = document.createElement("div");
+      tagsContainer.classList.add("d-flex");
+      tagsContainer.classList.add("m-0");
+      postCard.appendChild(tagsContainer);
+      for (let i = 0; i < tags.length; i++) {
+        const tagContainer = document.createElement("p");
+        tagContainer.classList.add("col-2");
+        tagContainer.classList.add("m-2");
+        tagContainer.classList.add("bg-info");
+        tagContainer.classList.add("text-black");
+        tagContainer.classList.add("text-center");
+        tagContainer.classList.add("border");
+        tagContainer.classList.add("border-secondary");
+        tagContainer.classList.add("rounded");
+        tagContainer.classList.add("small");
+        tagContainer.innerText = tags[i];
+        tagsContainer.appendChild(tagContainer);
+      }
+    }
 
     // Post author
     const postAuthor = document.createElement("p");
@@ -207,8 +252,6 @@ export function postCard(image, title, name, date, body, id) {
     postBodyContainer.classList.add("px-2");
     postBodyContainer.innerText = `${body}`;
 
-    postCard.appendChild(postImageContainer);
-    postCard.appendChild(titleLink);
     if (feed || singlePost) {
       postCard.appendChild(postAuthor);
     }
