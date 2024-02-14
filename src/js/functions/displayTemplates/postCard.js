@@ -54,21 +54,27 @@ export function postCard(image, title, name, date, body, id, tags) {
     if (tags) {
       const tagsContainer = document.createElement("div");
       tagsContainer.classList.add("d-flex");
+      tagsContainer.classList.add("flex-wrap");
       tagsContainer.classList.add("m-0");
       postCard.appendChild(tagsContainer);
       for (let i = 0; i < tags.length; i++) {
-        const tagContainer = document.createElement("p");
-        tagContainer.classList.add("col-2");
-        tagContainer.classList.add("m-2");
-        tagContainer.classList.add("bg-info");
-        tagContainer.classList.add("text-black");
-        tagContainer.classList.add("text-center");
-        tagContainer.classList.add("border");
-        tagContainer.classList.add("border-secondary");
-        tagContainer.classList.add("rounded");
-        tagContainer.classList.add("small");
-        tagContainer.innerText = tags[i];
-        tagsContainer.appendChild(tagContainer);
+        const spreadArray = [...tags[i]];
+        if (spreadArray.length > 2) {
+          const tagContainer = document.createElement("p");
+          // tagContainer.classList.add(`${tags[i]}`);
+          tagContainer.classList.add("col-3");
+          tagContainer.classList.add("mx-1");
+          tagContainer.classList.add("my-2");
+          tagContainer.classList.add("bg-info");
+          tagContainer.classList.add("text-black");
+          tagContainer.classList.add("text-center");
+          tagContainer.classList.add("border");
+          tagContainer.classList.add("border-secondary");
+          tagContainer.classList.add("rounded");
+          tagContainer.classList.add("small");
+          tagContainer.innerText = tags[i];
+          tagsContainer.appendChild(tagContainer);
+        }
       }
     }
 
@@ -198,21 +204,30 @@ export function postCard(image, title, name, date, body, id, tags) {
     if (tags) {
       const tagsContainer = document.createElement("div");
       tagsContainer.classList.add("d-flex");
+      tagsContainer.classList.add("flex-wrap");
       tagsContainer.classList.add("m-0");
       postCard.appendChild(tagsContainer);
       for (let i = 0; i < tags.length; i++) {
-        const tagContainer = document.createElement("p");
-        tagContainer.classList.add("col-2");
-        tagContainer.classList.add("m-2");
-        tagContainer.classList.add("bg-info");
-        tagContainer.classList.add("text-black");
-        tagContainer.classList.add("text-center");
-        tagContainer.classList.add("border");
-        tagContainer.classList.add("border-secondary");
-        tagContainer.classList.add("rounded");
-        tagContainer.classList.add("small");
-        tagContainer.innerText = tags[i];
-        tagsContainer.appendChild(tagContainer);
+        const spreadArray = [...tags[i]];
+        if (spreadArray.length > 2) {
+          // const badTag = tags[i].includes(" ");
+          // if (!badTag) {
+          const tagContainer = document.createElement("p");
+          // tagContainer.classList.add(`${tags[i]}`);
+          tagContainer.classList.add("col-3");
+          tagContainer.classList.add("mx-1");
+          tagContainer.classList.add("my-2");
+          tagContainer.classList.add("bg-info");
+          tagContainer.classList.add("text-black");
+          tagContainer.classList.add("text-center");
+          tagContainer.classList.add("border");
+          tagContainer.classList.add("border-secondary");
+          tagContainer.classList.add("rounded");
+          tagContainer.classList.add("small");
+          tagContainer.innerText = tags[i];
+          tagsContainer.appendChild(tagContainer);
+          // }
+        }
       }
     }
 

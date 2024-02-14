@@ -1,6 +1,8 @@
-export function filterPosts(tags) {
-  // Working on filter out tags that are blank but still read as length being 1
-  // tags.forEach((tag) => {
-  //   console.log(tag);
-  // });
-}
+// export function filterPosts(tags) {
+//   const getTagsOptions = document.querySelectorAll("select option");
+//   getTagsOptions.forEach((option) => {
+//     option.addEventListener("click", () => {
+//       console.log("Hello");
+//     });
+//   });
+// }

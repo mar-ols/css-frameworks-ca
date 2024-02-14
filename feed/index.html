@@ -10,6 +10,7 @@
     <title>introverti - feed</title>
     <link rel="stylesheet" href="../dist/css/index.css" />
     <script type="module" defer src="../src/js/feed/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -91,21 +92,42 @@
         <div
           class="d-flex flex-column flex-sm-row align-items-start mb-3 mb-sm-0"
         >
-          <label for="sort" class="me-1" aria-label="sort by">Sort by:</label>
-          <select id="sort" name="brand">
-            <option value="dateNew">Date - newest</option>
-            <option value="dateOld">Date - oldest</option>
-            <option value="likesMost">Likes - most</option>
-            <option value="likesFew">Likes - fewest</option>
-          </select>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle text-primary"
+              type="button"
+              id="dropdownFilter"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Filter by tag
+            </button>
+            <div
+              class="dropdown-menu bg-info"
+              aria-labelledby="dropdownFilter"
+            ></div>
+          </div>
+          <!-- <label for="filterByTag" class="me-1" aria-label="sort by"
+            >Filter by tags:</label
+          >
+          <select id="filterByTag" name="tag"></select> -->
         </div>
-        <label for="search" aria-label="search"></label>
-        <input
-          type="text"
-          id="search"
-          class="border border-secondary rounded col-10 col-sm-6 col-md-4 col-lg-3 me-2 p-1"
-          placeholder="Search.."
-        />
+        <form
+          id="searchForm"
+          class="d-flex col-9 col-sm-7 col-md-6 col-lg-5 col-xl-4"
+        >
+          <label for="search" aria-label="search"></label>
+          <input
+            type="text"
+            id="search"
+            class="border border-secondary rounded-start form-control"
+            placeholder="Search.."
+          />
+          <button id="searchBtn" class="btn btn-info border-secondary">
+            Search
+          </button>
+        </form>
       </section>
       <section>
         <form
