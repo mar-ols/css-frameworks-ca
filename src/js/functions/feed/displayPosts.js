@@ -3,7 +3,7 @@ import { errorMsg } from "../error.js";
 import { removePost } from "../../api/calls/feed/delete.js";
 import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
 import { postCard } from "../displayTemplates/postCard.js";
-// import { filterPosts } from "./filterPosts.js";
+import { filterPosts } from "./filterPosts.js";
 import { searchPosts } from "./searchPosts.js";
 
 export async function displayPosts() {
@@ -12,8 +12,10 @@ export async function displayPosts() {
     const uniquePost = new Set();
 
     searchPosts();
+    filterPosts(posts);
 
     const getPostsSection = document.querySelector(".postsSection");
+    getPostsSection.innerHTML = "";
     posts.forEach((post) => {
       if (post.title && post.body && post.media) {
         const postContent = `${post.title}${post.body}`;
@@ -42,7 +44,6 @@ export async function displayPosts() {
         }
       }
     });
-    // filterPosts(posts);
   } catch {
     errorMsg();
   }

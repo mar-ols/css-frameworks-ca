@@ -14,7 +14,6 @@ export async function login(user) {
     };
     const response = await fetch(loginURL, postData);
     const json = await response.json();
-    console.log(json);
     if (response.ok) {
       storage.saveStorage("token", json.accessToken);
       storage.saveStorage("profile", {

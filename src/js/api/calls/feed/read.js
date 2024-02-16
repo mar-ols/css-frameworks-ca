@@ -21,11 +21,7 @@ export async function getPosts() {
       if (getLoader) {
         getLoader.classList.remove("loader");
       }
-      console.log(posts);
-      if (posts.body !== null) {
-        saveStorage("posts", posts);
-      }
-
+      saveStorage("posts", posts);
       return posts;
     }
   } catch (error) {

@@ -61,8 +61,6 @@ export function postCard(image, title, name, date, body, id, tags) {
     for (let i = 0; i < tags.length; i++) {
       const spreadArray = [...tags[i]];
       if (spreadArray.length > 2) {
-        // const badTag = tags[i].includes(" ");
-        // if (!badTag) {
         const tagContainer = document.createElement("p");
         tagContainer.classList.add("tags");
         tagContainer.classList.add("col-3");
@@ -77,7 +75,6 @@ export function postCard(image, title, name, date, body, id, tags) {
         tagContainer.classList.add("small");
         tagContainer.innerText = tags[i];
         tagsContainer.appendChild(tagContainer);
-        // }
       }
     }
   }
