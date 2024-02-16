@@ -14,21 +14,11 @@ export async function displayPosts() {
     searchPosts();
 
     const getPostsSection = document.querySelector(".postsSection");
-    const getFilterSelector = document.querySelector(".dropdown-menu");
     posts.forEach((post) => {
       if (post.title && post.body && post.media) {
         const postContent = `${post.title}${post.body}`;
         if (!uniquePost.has(postContent)) {
           uniquePost.add(postContent);
-
-          // if (post.tags) {
-          //   for (let i = 0; i < post.tags.length; i++) {
-          //     const spreadArray = [...post.tags[i]];
-          //     if (spreadArray.length > 2) {
-          //       console.log()
-          //     }
-          //   }
-          // }
 
           getPostsSection.append(
             postCard(
@@ -42,8 +32,6 @@ export async function displayPosts() {
             )
           );
 
-          // filterPosts(post.tags);
-
           const getDeleteBtn = document.getElementById(`${post.id}`);
           if (getDeleteBtn) {
             getDeleteBtn.addEventListener("click", () => {
@@ -54,6 +42,7 @@ export async function displayPosts() {
         }
       }
     });
+    // filterPosts(posts);
   } catch {
     errorMsg();
   }

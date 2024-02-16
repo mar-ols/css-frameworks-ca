@@ -64,7 +64,7 @@ export function postCard(image, title, name, date, body, id, tags) {
         // const badTag = tags[i].includes(" ");
         // if (!badTag) {
         const tagContainer = document.createElement("p");
-        // tagContainer.classList.add(`${tags[i]}`);
+        tagContainer.classList.add("tags");
         tagContainer.classList.add("col-3");
         tagContainer.classList.add("mx-1");
         tagContainer.classList.add("my-2");
