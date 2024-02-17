@@ -9,6 +9,9 @@ export async function displayProfile() {
     const userName = document.querySelector("#profileUsername");
     userName.innerText = `${profile.name}`;
 
+    const userBioName = document.querySelector(".userNameSpan");
+    userBioName.innerText = `${profile.name}`;
+
     if (profile.avatar !== null) {
       const userAvatar = document.querySelector(".defaultImg");
       userAvatar.classList.add("visually-hidden");

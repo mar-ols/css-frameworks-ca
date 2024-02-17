@@ -34,6 +34,30 @@ export async function displayPost() {
     authorLink.href =
       "../../profile/index.html?author=" + `${getSinglePost.author.name}`;
 
+    if (getSinglePost.tags) {
+      const postTags = document.querySelector(".singlePostTags");
+      console.log(postTags);
+      for (let i = 0; i < getSinglePost.tags.length; i++) {
+        const spreadArray = [...getSinglePost.tags[i]];
+        if (spreadArray.length > 2) {
+          const tagContainer = document.createElement("p");
+          tagContainer.classList.add("tags");
+          tagContainer.classList.add("col-3");
+          tagContainer.classList.add("mx-1");
+          tagContainer.classList.add("my-2");
+          tagContainer.classList.add("bg-info");
+          tagContainer.classList.add("text-black");
+          tagContainer.classList.add("text-center");
+          tagContainer.classList.add("border");
+          tagContainer.classList.add("border-secondary");
+          tagContainer.classList.add("rounded");
+          tagContainer.classList.add("small");
+          tagContainer.innerText = getSinglePost.tags[i];
+          postTags.appendChild(tagContainer);
+        }
+      }
+    }
+
     const singlePostDate = document.querySelector("#singlePostDate");
     let neaterDate = new Date(getSinglePost.created).toLocaleDateString(
       "en-US",
