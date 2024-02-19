@@ -13,8 +13,6 @@ export async function getProfile() {
     });
     const user = await response.json();
     if (response.ok) {
-      const getLoader = document.querySelector(".loader");
-
       return user;
     }
   } catch (error) {

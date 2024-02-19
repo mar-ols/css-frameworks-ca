@@ -36,7 +36,6 @@ export async function displayPost() {
 
     if (getSinglePost.tags) {
       const postTags = document.querySelector(".singlePostTags");
-      console.log(postTags);
       for (let i = 0; i < getSinglePost.tags.length; i++) {
         const spreadArray = [...getSinglePost.tags[i]];
         if (spreadArray.length > 2) {
