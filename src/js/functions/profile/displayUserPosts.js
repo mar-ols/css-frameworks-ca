@@ -4,6 +4,7 @@ import { errorMsg } from "../error.js";
 import { removePost } from "../../api/calls/feed/delete.js";
 import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
 import { postCard } from "../displayTemplates/postCard.js";
+import { confirmDelete } from "../userMessages/confirmDelete.js";
 
 export async function displayUserPosts() {
   try {
@@ -33,8 +34,7 @@ export async function displayUserPosts() {
           const getDeleteBtn = document.getElementById(`${post.id}`);
           if (getDeleteBtn) {
             getDeleteBtn.addEventListener("click", () => {
-              removePost(post.id);
-              userFeedback(`Post deleted!`);
+              confirmDelete(post.id);
             });
           }
         }

@@ -11,9 +11,9 @@ export function userFeedback(text) {
 
   if (
     text === `Hurrah! Post created!` ||
-    `Post deleted!` ||
     `Avatar updated` ||
-    `No such posts`
+    `No such posts` ||
+    `Post deleted!`
   ) {
     closeBtn.addEventListener("click", () => {
       location.reload();

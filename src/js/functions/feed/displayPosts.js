@@ -1,10 +1,9 @@
 import { getPosts } from "../../api/calls/feed/read.js";
 import { errorMsg } from "../error.js";
-import { removePost } from "../../api/calls/feed/delete.js";
-import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
 import { postCard } from "../displayTemplates/postCard.js";
 import { filterPosts } from "./filterPosts.js";
 import { searchPosts } from "./searchPosts.js";
+import { confirmDelete } from "../userMessages/confirmDelete.js";
 
 export async function displayPosts() {
   try {
@@ -37,8 +36,7 @@ export async function displayPosts() {
           const getDeleteBtn = document.getElementById(`${post.id}`);
           if (getDeleteBtn) {
             getDeleteBtn.addEventListener("click", () => {
-              removePost(post.id);
-              userFeedback(`Post deleted!`);
+              confirmDelete(post.id);
             });
           }
         }

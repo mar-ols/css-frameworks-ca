@@ -1,13 +1,10 @@
 import { getPost } from "../../api/calls/feed/read.js";
 import { errorMsg } from "../error.js";
 import { id } from "../../api/constants.js";
-import { loadStorage } from "../storage/localStorage.js";
 
 export async function displayPost() {
   try {
     const getSinglePost = await getPost(id);
-
-    const getProfile = loadStorage("profile");
 
     const getH1 = document.querySelector("#singlePostH1");
     getH1.classList.add("text-secondary");
