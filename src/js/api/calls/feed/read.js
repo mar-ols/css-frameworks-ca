@@ -1,6 +1,7 @@
 import { API_BASE, API_POSTS } from "../../constants.js";
 import { loadStorage } from "../../../functions/storage/localStorage.js";
 import { loader } from "../../../functions/loader.js";
+import { saveStorage } from "../../../functions/storage/localStorage.js";
 
 export async function getPosts() {
   loader();
@@ -20,7 +21,7 @@ export async function getPosts() {
       if (getLoader) {
         getLoader.classList.remove("loader");
       }
-      console.log(posts);
+      saveStorage("posts", posts);
       return posts;
     }
   } catch (error) {

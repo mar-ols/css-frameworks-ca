@@ -25,7 +25,8 @@ export async function displayUserPosts() {
               authorName,
               post.created,
               post.body,
-              post.id
+              post.id,
+              post.tags
             )
           );
 

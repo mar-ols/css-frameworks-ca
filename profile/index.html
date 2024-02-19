@@ -90,9 +90,22 @@
             <div class="d-flex align-items-center ms-1">
               <h1 id="profileUsername"></h1>
               <img
+                src="../images/social_batt_low.png"
+                alt="A battery representing social battery status"
+                class="socialBatt img-fluid ps-1 d-none"
+                id="battLow"
+              />
+              <img
                 src="../images/social_batt_half.png"
                 alt="A battery representing social battery status"
-                class="img-fluid ps-1"
+                class="socialBatt img-fluid ps-1 d-none"
+                id="battHalf"
+              />
+              <img
+                src="../images/social_batt_full.png"
+                alt="A battery representing social battery status"
+                class="socialBatt img-fluid ps-1"
+                id="battFull"
               />
             </div>
             <div>
@@ -119,6 +132,16 @@
                       id="changeAvatar"
                       class="form-control rounded mb-2 border-secondary"
                     />
+                    <p
+                      class="small bg-primary text-secondary border border-secondary p-1"
+                    >
+                      <i
+                        class="fa-solid fa-circle-info"
+                        style="color: #516c56"
+                      ></i>
+                      Add a working image URL, or delete your existing avatar by
+                      sending a blank form
+                    </p>
                     <button
                       type="submit"
                       id="changeAvatarBtn"
@@ -131,11 +154,12 @@
               </div>
             </div>
             <div class="ms-1 mb-4">
-              <p>User bio</p>
+              <p class="fw-bold">User bio</p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam et quisquam distinctio non possimus voluptas ab
-                veniam aut est aliquam!
+                <span class="userNameSpan"></span> is a kick-ass front developer
+                student with a keen eye for design and problem-solving. They're
+                always hungry for more knowledge and are here on a mission to
+                turn their curiosity into expertise.
               </p>
             </div>
             <div class="ms-1 mb-4">

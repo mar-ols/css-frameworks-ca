@@ -9,7 +9,12 @@ export function userFeedback(text) {
 
   const closeBtn = document.querySelector(".closeDialogBtn");
 
-  if (text === `Hurrah! Post created!` || `Post deleted!` || `Avatar updated`) {
+  if (
+    text === `Hurrah! Post created!` ||
+    `Post deleted!` ||
+    `Avatar updated` ||
+    `No such posts`
+  ) {
     closeBtn.addEventListener("click", () => {
       location.reload();
     });
