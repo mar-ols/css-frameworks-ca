@@ -1,11 +1,12 @@
 import { getUserPosts } from "../../api/calls/profile/getUserPosts.js";
 import { authorName } from "../../api/constants.js";
 import { errorMsg } from "../error.js";
-import { removePost } from "../../api/calls/feed/delete.js";
-import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
 import { postCard } from "../displayTemplates/postCard.js";
 import { confirmDelete } from "../userMessages/confirmDelete.js";
 
+/**
+ * This function calls on the getUserPosts function to show the posts tied to a specific user and displays in on the user profiles.
+ */
 export async function displayUserPosts() {
   try {
     const posts = await getUserPosts();

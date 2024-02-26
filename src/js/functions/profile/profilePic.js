@@ -1,3 +1,7 @@
+/**
+ * This function sets the users avatar on their profile and removes existing avatar if a blank form is sent.
+ * @param {string} imgURL Value from input form to set/change user avatar
+ */
 export function setUserPic(imgURL) {
   const imgContainer = document.querySelector(".profileImgContainer");
   const userAvatar = document.querySelector(".defaultImg");

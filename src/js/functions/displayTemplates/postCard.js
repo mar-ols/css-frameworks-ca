@@ -6,6 +6,17 @@ const feed = location.includes("feed");
 const profile = location.includes("profile");
 const singlePost = location.includes("single");
 
+/**
+ * This function takes several parameters, creates and returns HTML that contain the data from the posts in the database.
+ * @param {string} image
+ * @param {string} title
+ * @param {string} name
+ * @param {string} date
+ * @param {string} body
+ * @param {number} id
+ * @param {array.<string>} tags
+ * @returns HTML containing data from parameters
+ */
 export function postCard(image, title, name, date, body, id, tags) {
   const getProfile = loadStorage("profile");
 

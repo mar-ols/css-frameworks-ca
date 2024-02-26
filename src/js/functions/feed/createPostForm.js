@@ -1,6 +1,9 @@
 import { createPost } from "../../api/calls/feed/create.js";
 import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
 
+/**
+ * This function adds an eventlistener to a form and takes the values the user inputs and calls on the createPost function to send said info to the database to make a new post. It then calls on the userFeedback function to show a message in case of successful posting.
+ */
 export function getNewPostData() {
   try {
     const getCreateForm = document.querySelector("#createPost");

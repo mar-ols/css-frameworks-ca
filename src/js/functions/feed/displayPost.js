@@ -2,6 +2,9 @@ import { getPost } from "../../api/calls/feed/read.js";
 import { errorMsg } from "../error.js";
 import { id } from "../../api/constants.js";
 
+/**
+ * This function creates the HTML to display a single post from the database. It takes the getPost function to retrieve the info to display in the post.
+ */
 export async function displayPost() {
   try {
     const getSinglePost = await getPost(id);
@@ -72,6 +75,9 @@ export async function displayPost() {
   }
 }
 
+/**
+ * This function makes the back button on the single post page functional.
+ */
 export function backBtn() {
   const getBtn = document.querySelector("#backBtn");
 

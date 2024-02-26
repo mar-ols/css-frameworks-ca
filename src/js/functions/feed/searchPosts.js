@@ -3,6 +3,9 @@ import { postCard } from "../displayTemplates/postCard.js";
 import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
 import { removePost } from "../../api/calls/feed/delete.js";
 
+/**
+ * This function searches the title and body of the posts to match the value of the search bar input.
+ */
 export function searchPosts() {
   const getSearchInput = document.querySelector("#search");
   const getSearchForm = document.querySelector("#searchForm");

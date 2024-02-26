@@ -3,6 +3,10 @@ import { removePost } from "../../api/calls/feed/delete.js";
 import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
 import { displayPosts } from "./displayPosts.js";
 
+/**
+ * This function takes an array of posts as the parameter and filters out any posts that don't have tags. It also filters out tags that are empty arrays as some tags return as true despite not having any values.
+ * @param {array} posts Array containing all the posts from the database
+ */
 export function filterPosts(posts) {
   const getPostsSection = document.querySelector(".postsSection");
   const getFilterBtn = document.querySelector("#filterByTag");

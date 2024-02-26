@@ -1,5 +1,8 @@
 import { login } from "../../../api/calls/login.js";
 
+/**
+ * This function takes the values from the login form and calls on the login function to send in the user credentials and log in the user.
+ */
 export function getLoginData() {
   const getLoginForm = document.querySelector("#loginForm");
 

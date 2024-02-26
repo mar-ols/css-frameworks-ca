@@ -3,6 +3,9 @@ import { id } from "../../api/constants.js";
 import { updatePost } from "../../api/calls/feed/update.js";
 import { userFeedback } from "../userMessages/feed/feedbackTemplate.js";
 
+/**
+ * This function sets the values of the update post form and allows the user to edit their post before calling on the updatePost function to send in the updated object to the database.
+ */
 export async function updatePostForm() {
   try {
     const getValues = await getPost(id);
@@ -28,10 +31,6 @@ export async function updatePostForm() {
         ).value = `${getValues.tags[2]}`);
       }
     }
-
-    // const setTags2 = (document.querySelector(
-    //   "#updateTags2"
-    // ).value = `${getValues.tags}`);
 
     const setImg = (document.querySelector(
       "#updatePostImgURL"

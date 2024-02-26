@@ -1,3 +1,7 @@
+/**
+ * This function shows a dialog to the user after registration with message for either successful or unsuccessful registration and redirects to login page in case of success.
+ * @param {string} text Text shown to user
+ */
 export function loginRegSuccess(text) {
   const getDialog = document.querySelector(".dialog");
   getDialog.showModal();

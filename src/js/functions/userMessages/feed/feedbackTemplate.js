@@ -1,5 +1,9 @@
 import { id } from "../../../api/constants.js";
 
+/**
+ * This function takes a string parameter that decides what action is taken after a message is displayed to the user.
+ * @param {string} text Text shown to user
+ */
 export function userFeedback(text) {
   const getDialog = document.querySelector(".dialog");
   getDialog.showModal();

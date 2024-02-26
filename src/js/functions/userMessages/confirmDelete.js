@@ -1,6 +1,10 @@
 import { removePost } from "../../api/calls/feed/delete.js";
 import { userFeedback } from "./feed/feedbackTemplate.js";
 
+/**
+ * This function shows a dialog to the user asking for confirmation to delete a post.
+ * @param {number} id ID of post
+ */
 export function confirmDelete(id) {
   const getDeleteDialog = document.querySelector(".deleteDialog");
   const closeBtn = document.querySelector(".closeDeleteDialog");

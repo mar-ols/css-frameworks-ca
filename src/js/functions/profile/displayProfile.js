@@ -2,6 +2,9 @@ import { getProfile } from "../../api/calls/profile/getProfile.js";
 import { errorMsg } from "../error.js";
 import { setUserPic } from "./profilePic.js";
 
+/**
+ * This function sets the username, avatar and followers on user profiles.
+ */
 export async function displayProfile() {
   try {
     const profile = await getProfile();

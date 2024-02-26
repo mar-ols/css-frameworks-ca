@@ -1,3 +1,6 @@
+/**
+ * This function creates the HTML that is used to show the user a message in case of an error.
+ */
 export function errorMsg() {
   const errorContainer = document.createElement("div");
   errorContainer.classList.add("bg-primary");

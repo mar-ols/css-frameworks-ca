@@ -1,3 +1,6 @@
+/**
+ * This function changes the status of the social battery featured on the profile page.
+ */
 export function socialBattery() {
   const lowBatt = document.querySelector("#battLow");
   const halfBatt = document.querySelector("#battHalf");

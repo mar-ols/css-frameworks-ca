@@ -1,5 +1,8 @@
 import { register } from "../../../api/calls/register.js";
 
+/**
+ * This function takes the values from the register form and calls on the register function to send in the user credentials.
+ */
 export function getRegisterData() {
   const getRegisterForm = document.querySelector("#registerForm");
 

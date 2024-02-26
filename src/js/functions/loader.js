@@ -1,3 +1,6 @@
+/**
+ * This function creates a loader to be displayed while the user waits for posts to be rendered.
+ */
 export function loader() {
   const loaderContainer = document.createElement("div");
   loaderContainer.classList.add("loader-container");
