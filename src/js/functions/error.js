@@ -3,15 +3,17 @@
  */
 export function errorMsg() {
   const errorContainer = document.createElement("div");
-  errorContainer.classList.add("bg-primary");
-  errorContainer.classList.add("border");
-  errorContainer.classList.add("border-secondary");
-  errorContainer.classList.add("rounded");
-  errorContainer.classList.add("pt-4");
-  errorContainer.classList.add("px-2");
-  errorContainer.classList.add("pb-3");
-  errorContainer.classList.add("mx-auto");
-  errorContainer.classList.add("text-danger");
+  errorContainer.classList.add(
+    "bg-primary",
+    "border",
+    "border-secondary",
+    "rounded",
+    "pt-4",
+    "px-2",
+    "pb-3",
+    "mx-auto",
+    "text-danger"
+  );
 
   const error = document.createElement("div");
   error.classList.add("error");

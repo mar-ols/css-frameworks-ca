@@ -47,8 +47,6 @@ export async function register(user) {
     const status = json.statusCode;
     if (response.ok) {
       loginRegSuccess(`Registration successful! You can now log in.`);
-      console.log(response);
-      console.log(json);
     } else if (status === 400) {
       loginRegSuccess(
         `Looks like this user already exists, please choose a unique username and email.`

@@ -16,9 +16,7 @@ export async function displayPost() {
     const imgContainer = document.querySelector("#imgContainer");
     const singlePostImg = document.createElement("img");
     singlePostImg.setAttribute("alt", "No alt text provided");
-    singlePostImg.classList.add("img-fluid");
-    singlePostImg.classList.add("rounded-top");
-    singlePostImg.classList.add("col-12");
+    singlePostImg.classList.add("img-fluid", "rounded-top", "col-12");
     singlePostImg.src = getSinglePost.media;
     imgContainer.appendChild(singlePostImg);
 
@@ -40,17 +38,19 @@ export async function displayPost() {
         const spreadArray = [...getSinglePost.tags[i]];
         if (spreadArray.length > 2) {
           const tagContainer = document.createElement("p");
-          tagContainer.classList.add("tags");
-          tagContainer.classList.add("col-3");
-          tagContainer.classList.add("mx-1");
-          tagContainer.classList.add("my-2");
-          tagContainer.classList.add("bg-info");
-          tagContainer.classList.add("text-black");
-          tagContainer.classList.add("text-center");
-          tagContainer.classList.add("border");
-          tagContainer.classList.add("border-secondary");
-          tagContainer.classList.add("rounded");
-          tagContainer.classList.add("small");
+          tagContainer.classList.add(
+            "tags",
+            "col-3",
+            "mx-1",
+            "my-2",
+            "bg-info",
+            "text-black",
+            "text-center",
+            "border",
+            "border-secondary",
+            "rounded",
+            "small"
+          );
           tagContainer.innerText = getSinglePost.tags[i];
           postTags.appendChild(tagContainer);
         }

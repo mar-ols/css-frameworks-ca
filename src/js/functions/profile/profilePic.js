@@ -7,11 +7,13 @@ export function setUserPic(imgURL) {
   const userAvatar = document.querySelector(".defaultImg");
   const profilePic = document.createElement("img");
   profilePic.setAttribute("alt", "No alt text provided");
-  profilePic.classList.add("userPic");
-  profilePic.classList.add("img-fluid");
-  profilePic.classList.add("rounded");
-  profilePic.classList.add("border");
-  profilePic.classList.add("border-secondary");
+  profilePic.classList.add(
+    "userPic",
+    "img-fluid",
+    "rounded",
+    "border",
+    "border-secondary"
+  );
   imgContainer.appendChild(profilePic);
   if (imgURL) {
     profilePic.src = `${imgURL}`;

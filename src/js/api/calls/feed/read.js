@@ -46,7 +46,6 @@ export async function getPosts() {
         getLoader.classList.remove("loader");
       }
       saveStorage("posts", posts);
-      console.log(posts);
       return posts;
     }
   } catch (error) {

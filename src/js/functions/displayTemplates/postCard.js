@@ -22,28 +22,27 @@ export function postCard(image, title, name, date, body, id, tags) {
 
   // Post container
   const postCard = document.createElement("div");
-  postCard.classList.add("postCard");
-  postCard.classList.add("bg-primary");
-  postCard.classList.add("text-secondary");
-  postCard.classList.add("col-md-8");
-  postCard.classList.add("mx-auto");
-  postCard.classList.add("border");
-  postCard.classList.add("border-secondary");
-  postCard.classList.add("rounded");
-  postCard.classList.add("m-1");
+  postCard.classList.add(
+    "postCard",
+    "bg-primary",
+    "text-secondary",
+    "col-md-8",
+    "mx-auto",
+    "border",
+    "border-secondary",
+    "rounded",
+    "m-1"
+  );
 
   // Post image container
   const postImageContainer = document.createElement("div");
   // Post image
   const postImage = document.createElement("img");
-  postImage.setAttribute("alt", "No alt text provided");
-  postImage.classList.add("img-fluid");
-  postImage.classList.add("col-12");
-  postImage.classList.add("rounded-top");
   postImage.src = `${image}`;
+  postImage.setAttribute("alt", "No alt text provided");
+  postImage.classList.add("img-fluid", "col-12", "rounded-top");
   postCard.appendChild(postImageContainer);
   postImageContainer.appendChild(postImage);
-  postCard.appendChild(postImageContainer);
 
   // Post title link
   const titleLink = document.createElement("a");
@@ -56,34 +55,32 @@ export function postCard(image, title, name, date, body, id, tags) {
   titleLink.classList.add("text-secondary");
   // Post title text
   const postTitleContainer = document.createElement("h5");
-  postTitleContainer.classList.add("px-2");
-  postTitleContainer.classList.add("pt-2");
+  postTitleContainer.classList.add("px-2", "pt-2");
   postTitleContainer.innerText = `${title}`;
   titleLink.appendChild(postTitleContainer);
-
   postCard.appendChild(titleLink);
 
   if (tags) {
     const tagsContainer = document.createElement("div");
-    tagsContainer.classList.add("d-flex");
-    tagsContainer.classList.add("flex-wrap");
-    tagsContainer.classList.add("m-0");
+    tagsContainer.classList.add("d-flex", "flex-wrap", "m-0");
     postCard.appendChild(tagsContainer);
     for (let i = 0; i < tags.length; i++) {
       const spreadArray = [...tags[i]];
       if (spreadArray.length > 2) {
         const tagContainer = document.createElement("p");
-        tagContainer.classList.add("tags");
-        tagContainer.classList.add("col-3");
-        tagContainer.classList.add("mx-1");
-        tagContainer.classList.add("my-2");
-        tagContainer.classList.add("bg-info");
-        tagContainer.classList.add("text-black");
-        tagContainer.classList.add("text-center");
-        tagContainer.classList.add("border");
-        tagContainer.classList.add("border-secondary");
-        tagContainer.classList.add("rounded");
-        tagContainer.classList.add("small");
+        tagContainer.classList.add(
+          "tags",
+          "col-3",
+          "mx-1",
+          "my-2",
+          "bg-info",
+          "text-black",
+          "text-center",
+          "border",
+          "border-secondary",
+          "rounded",
+          "small"
+        );
         tagContainer.innerText = tags[i];
         tagsContainer.appendChild(tagContainer);
       }
@@ -92,8 +89,7 @@ export function postCard(image, title, name, date, body, id, tags) {
 
   // Post author
   const postAuthor = document.createElement("p");
-  postAuthor.classList.add("px-2");
-  postAuthor.classList.add("mb-0");
+  postAuthor.classList.add("px-2", "mb-0");
   postAuthor.innerText = `by `;
   // Post author link
   const authorLink = document.createElement("a");
@@ -114,8 +110,7 @@ export function postCard(image, title, name, date, body, id, tags) {
     day: "2-digit",
   });
   const postDate = document.createElement("p");
-  postDate.classList.add("px-2");
-  postDate.classList.add("small");
+  postDate.classList.add("px-2", "small");
   postDate.innerText = `${neaterDate}`;
 
   // Post body
@@ -132,9 +127,11 @@ export function postCard(image, title, name, date, body, id, tags) {
   if (getProfile.userName === name) {
     //User action container
     const userActions = document.createElement("div");
-    userActions.classList.add("userActions");
-    userActions.classList.add("d-flex");
-    userActions.classList.add("justify-content-between");
+    userActions.classList.add(
+      "userActions",
+      "d-flex",
+      "justify-content-between"
+    );
 
     // Update post
     const updatePostContainer = document.createElement("p");
@@ -147,20 +144,24 @@ export function postCard(image, title, name, date, body, id, tags) {
     if (profile) {
       updatePostLink.href = "../feed/singlePost/update.html?id=" + `${id}`;
     }
-    updatePostLink.classList.add("text-secondary");
-    updatePostLink.classList.add("small");
-    updatePostLink.classList.add("px-2");
-    updatePostLink.classList.add("text-decoration-underline");
+    updatePostLink.classList.add(
+      "text-secondary",
+      "small",
+      "px-2",
+      "text-decoration-underline"
+    );
     updatePostLink.innerText = `Update post`;
 
     // Delete post
     const deletePostContainer = document.createElement("p");
     deletePostContainer.setAttribute("id", `${id}`);
-    deletePostContainer.classList.add("deleteBtn");
-    deletePostContainer.classList.add("text-danger");
-    deletePostContainer.classList.add("small");
-    deletePostContainer.classList.add("px-2");
-    deletePostContainer.classList.add("text-decoration-underline");
+    deletePostContainer.classList.add(
+      "deleteBtn",
+      "text-danger",
+      "small",
+      "px-2",
+      "text-decoration-underline"
+    );
     deletePostContainer.innerText = `Delete post`;
 
     postCard.appendChild(userActions);

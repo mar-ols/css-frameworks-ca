@@ -3,7 +3,7 @@
  <img src="https://www.m-boe.com/wp-content/uploads/2024/01/css-frameworks.jpg" alt="Screenshot of introverti, my css frameworks front page.">
  
  ## :beginner: About
- My CSS Frameworks project is a social media page for introverts and neurodivergents. The aim is a more muted SoMe page with softer colours, no busy ads, no auto scrolls, auto plays or other loud and disruptive elements. It also features a social battery status to indicate whether you're up for a chat or not.  
+ My CSS Frameworks project is a social media page for introverts and neurodivergents. The aim is a more muted SoMe page with softer colours, no busy ads, no auto scrolls, auto plays or other loud and disruptive elements. It also features a social battery status to indicate whether you're up for a chat or not.  I am working with the v1 API.
  
  You'll find the following pages:
  <ul>
