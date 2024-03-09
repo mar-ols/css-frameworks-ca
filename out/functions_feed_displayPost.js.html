@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: functions/feed/displayPost.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: functions/feed/displayPost.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { getPost } from "../../api/calls/feed/read.js";
+import { errorMsg } from "../error.js";
+import { id } from "../../api/constants.js";
+
+/**
+ * This function creates the HTML to display a single post from the database. It takes the getPost function to retrieve the info to display in the post.
+ */
+export async function displayPost() {
+  try {
+    const getSinglePost = await getPost(id);
+
+    const getH1 = document.querySelector("#singlePostH1");
+    getH1.classList.add("text-secondary");
+    getH1.innerText = getSinglePost.title;
+
+    const imgContainer = document.querySelector("#imgContainer");
+    const singlePostImg = document.createElement("img");
+    singlePostImg.setAttribute("alt", "No alt text provided");
+    singlePostImg.classList.add("img-fluid");
+    singlePostImg.classList.add("rounded-top");
+    singlePostImg.classList.add("col-12");
+    singlePostImg.src = getSinglePost.media;
+    imgContainer.appendChild(singlePostImg);
+
+    const authorContainer = document.querySelector("#singlePostAuthor");
+    authorContainer.innerText = `by `;
+
+    // Post author link
+    const authorLink = document.createElement("a");
+    authorLink.classList.add("text-secondary");
+    authorLink.innerText = `${getSinglePost.author.name}`;
+    authorContainer.appendChild(authorLink);
+
+    authorLink.href =
+      "../../profile/index.html?author=" + `${getSinglePost.author.name}`;
+
+    if (getSinglePost.tags) {
+      const postTags = document.querySelector(".singlePostTags");
+      for (let i = 0; i &lt; getSinglePost.tags.length; i++) {
+        const spreadArray = [...getSinglePost.tags[i]];
+        if (spreadArray.length > 2) {
+          const tagContainer = document.createElement("p");
+          tagContainer.classList.add("tags");
+          tagContainer.classList.add("col-3");
+          tagContainer.classList.add("mx-1");
+          tagContainer.classList.add("my-2");
+          tagContainer.classList.add("bg-info");
+          tagContainer.classList.add("text-black");
+          tagContainer.classList.add("text-center");
+          tagContainer.classList.add("border");
+          tagContainer.classList.add("border-secondary");
+          tagContainer.classList.add("rounded");
+          tagContainer.classList.add("small");
+          tagContainer.innerText = getSinglePost.tags[i];
+          postTags.appendChild(tagContainer);
+        }
+      }
+    }
+
+    const singlePostDate = document.querySelector("#singlePostDate");
+    let neaterDate = new Date(getSinglePost.created).toLocaleDateString(
+      "en-US",
+      {
+        year: "numeric",
+        month: "long",
+        day: "2-digit",
+      }
+    );
+    singlePostDate.innerText = neaterDate;
+
+    const singlePostBody = document.querySelector("#singlePostBody");
+    singlePostBody.innerText = getSinglePost.body;
+  } catch {
+    errorMsg();
+  }
+}
+
+/**
+ * This function makes the back button on the single post page functional.
+ */
+export function backBtn() {
+  const getBtn = document.querySelector("#backBtn");
+
+  getBtn.addEventListener("click", () => {
+    window.history.back();
+  });
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#backBtn">backBtn</a></li><li><a href="global.html#changeAvatar">changeAvatar</a></li><li><a href="global.html#confirmDelete">confirmDelete</a></li><li><a href="global.html#createPost">createPost</a></li><li><a href="global.html#displayChangeAvatar">displayChangeAvatar</a></li><li><a href="global.html#displayPost">displayPost</a></li><li><a href="global.html#displayProfile">displayProfile</a></li><li><a href="global.html#displayUserPosts">displayUserPosts</a></li><li><a href="global.html#errorMsg">errorMsg</a></li><li><a href="global.html#filterPosts">filterPosts</a></li><li><a href="global.html#getAvatarData">getAvatarData</a></li><li><a href="global.html#getLoginData">getLoginData</a></li><li><a href="global.html#getNewPostData">getNewPostData</a></li><li><a href="global.html#getPost">getPost</a></li><li><a href="global.html#getPosts">getPosts</a></li><li><a href="global.html#getProfile">getProfile</a></li><li><a href="global.html#getRegisterData">getRegisterData</a></li><li><a href="global.html#getUserPosts">getUserPosts</a></li><li><a href="global.html#loadStorage">loadStorage</a></li><li><a href="global.html#loader">loader</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#loginRegSuccess">loginRegSuccess</a></li><li><a href="global.html#logout">logout</a></li><li><a href="global.html#postCard">postCard</a></li><li><a href="global.html#register">register</a></li><li><a href="global.html#removePost">removePost</a></li><li><a href="global.html#removeStorage">removeStorage</a></li><li><a href="global.html#saveStorage">saveStorage</a></li><li><a href="global.html#searchPosts">searchPosts</a></li><li><a href="global.html#setProfileLink">setProfileLink</a></li><li><a href="global.html#setUserPic">setUserPic</a></li><li><a href="global.html#socialBattery">socialBattery</a></li><li><a href="global.html#updatePost">updatePost</a></li><li><a href="global.html#updatePostForm">updatePostForm</a></li><li><a href="global.html#userFeedback">userFeedback</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Mon Feb 26 2024 17:46:23 GMT+0100 (sentraleuropeisk normaltid)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

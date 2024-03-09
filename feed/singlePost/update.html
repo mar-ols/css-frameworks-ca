@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Feed page for introverti. Here you can post images, videos and text posts."
+    />
+    <title>introverti - update</title>
+    <link rel="stylesheet" href="../../dist/css/index.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/d4c830eb8e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="../../src/js/feed/update/index.js"
+      type="module"
+      defer
+    ></script>
+  </head>
+  <body class="bg-primary d-flex flex-column">
+    <header
+      class="bg-secondary d-flex justify-content-between align-items-center p-3"
+    >
+      <div>
+        <a href="../"
+          ><img
+            src="../../images/header_logo.png"
+            alt="introverti logo and the text: social media for quiet minds"
+            class="img-fluid"
+        /></a>
+      </div>
+      <nav>
+        <div
+          data-bs-toggle="offcanvas"
+          href="#menu"
+          role="button"
+          aria-controls="menu"
+        >
+          <img
+            src="../../images/Menu.png"
+            alt="Hamburger menu"
+            class="img-fluid"
+          />
+        </div>
+        <div
+          class="bg-secondary offcanvas offcanvas-end d-flex flex-column"
+          tabindex="-1"
+          id="menu"
+          data-bs-target="#menu"
+        >
+          <div class="offcanvas-header">
+            <button
+              type="button"
+              class="btn-close ms-auto"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <a
+            href="../"
+            class="list-group-item bg-secondary text-info border-bottom m-3 pb-3"
+            >Feed</a
+          >
+          <a
+            href="../../profile/"
+            class="setProfileLinkInUpdate list-group-item bg-secondary text-primary text-primary border-bottom m-3 pb-3"
+            >Profile</a
+          >
+          <a
+            href="#"
+            class="list-group-item bg-secondary text-primary border-bottom m-3 pb-3"
+            >About introverti</a
+          >
+          <a
+            href="../../"
+            class="logout list-group-item bg-secondary text-primary border-bottom m-3 pb-3"
+            >Log out</a
+          >
+        </div>
+      </nav>
+    </header>
+    <main class="vh-100">
+      <h1 class="text-center my-4">Update post</h1>
+      <form
+        id="updatePost"
+        class="d-flex flex-column col-sm-8 col-md-7 col-lg-5 col-xxl-4 mx-3 mx-sm-auto mt-5"
+      >
+        <label for="updatePostTitle">Title*:</label>
+        <input
+          type="text"
+          id="updatePostTitle"
+          name="updateTitle"
+          class="mb-2"
+          required
+        />
+        <div class="d-flex justify-content-between">
+          <div class="d-flex flex-column col-4">
+            <label for="updatePostTags1">Tag 1:</label>
+            <input
+              type="text"
+              id="updateTags1"
+              name="updateTags1"
+              placeholder=""
+            />
+          </div>
+          <div class="d-flex flex-column col-4">
+            <label for="updatePostTags2">Tag 2:</label>
+            <input
+              type="text"
+              id="updateTags2"
+              name="updateTags2"
+              placeholder=""
+            />
+          </div>
+          <div class="d-flex flex-column col-4">
+            <label for="updatePostTags2">Tag 3:</label>
+            <input
+              type="text"
+              id="updateTags3"
+              name="updateTags3"
+              placeholder=""
+            />
+          </div>
+        </div>
+        <label for="updatePostImgURL">Image URL*:</label>
+        <input
+          type="text"
+          id="updatePostImgURL"
+          name="updatePostImgURL"
+          class="mb-2"
+          required
+        />
+        <label for="updatePostBody">Post*:</label>
+        <textarea
+          id="updatePostBody"
+          name="updateBody"
+          class="pb-6"
+          maxlength="280"
+          required
+        ></textarea>
+        <p class="small text-secondary">Max. 280 char.</p>
+        <button
+          id="updatePostBtn"
+          class="btn btn-info border-secondary col-5 col-xl-3 mb-1"
+        >
+          Update
+        </button>
+      </form>
+      <dialog class="dialog pt-4 pb-3 px-6 border-secondary">
+        <div class="d-flex">
+          <div class="col-12 pt-1">
+            <p class="dialogText"></p>
+          </div>
+          <div class="col-1">
+            <button type="button" class="closeDialogBtn btn" aria-label="Close">
+              &times;
+            </button>
+          </div>
+        </div>
+      </dialog>
+    </main>
+    <footer class="bg-secondary py-3">
+      <ul class="list-group">
+        <li class="list-group-item bg-secondary border-0 text-primary">
+          About Introverti
+        </li>
+        <li class="list-group-item bg-secondary border-0 text-primary">
+          Contact Us
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
